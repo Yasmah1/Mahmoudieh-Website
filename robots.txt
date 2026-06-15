@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /YM-3.ico
+
+Sitemap: https://mahmoudieh.com/sitemap.xml

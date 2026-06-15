@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data:; connect-src 'self' https://formspree.io; font-src 'self' https://fonts.gstatic.com; object-src 'none';">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Mahmoudieh Studio</title>
+  <meta name="description" content="Start a conversation with Mahmoudieh Studio. Project enquiries, speaking engagements, consulting, and collaborations.">
+  <link rel="icon" href="YM-3.ico" type="image/x-icon">
+  <link rel="canonical" href="https://mahmoudieh.com/contact.html">
+  <meta name="robots" content="index, follow">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mahmoudieh.com/contact.html">
+  <meta property="og:title" content="Contact — Mahmoudieh Studio">
+  <meta property="og:description" content="Start a conversation with Mahmoudieh Studio. Project enquiries, speaking engagements, consulting, and collaborations.">
+  <meta property="og:image" content="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777720555/7R103896_1_1_ao84xi.jpg">
+  <meta property="og:site_name" content="Mahmoudieh Studio">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact — Mahmoudieh Studio">
+  <meta name="twitter:description" content="Start a conversation with Mahmoudieh Studio. Project enquiries, speaking engagements, consulting, and collaborations.">
+  <meta name="twitter:image" content="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777720555/7R103896_1_1_ao84xi.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ── Contact page specific styles ── */
+
+    /* Nav — charcoal by default on sand background (no hero image) */
+    #nav .nav-logo,
+    #nav .nav-links a {
+      color: var(--text);
+    }
+
+    #nav.nav--hero-mode .nav-logo,
+    #nav.nav--hero-mode .nav-links a {
+      color: var(--text);
+    }
+
+    #nav .nav-links a:hover { color: var(--accent); }
+
+    /* Hero */
+    .contact-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 var(--gutter) clamp(80px, 14vh, 140px);
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-hero-eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 28px;
+      opacity: 0;
+      transition: opacity 0.7s var(--ease-out) 0.8s;
+    }
+
+    .contact-hero-eyebrow.visible { opacity: 1; }
+
+    .contact-hero-headline {
+      font-family: var(--font-heading);
+      font-weight: 200;
+      font-size: clamp(64px, 13vw, 200px);
+      line-height: 0.88;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      padding-bottom: 0.14em;
+      overflow: visible;
+    }
+
+    /* Each word wrapper clips during entry */
+    .contact-word {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+      margin-right: 0.2em;
+      padding-bottom: 0.2em;
+    }
+
+    .contact-word-inner {
+      display: inline-block;
+      transform: translateY(105%);
+      transition: transform 1.1s var(--ease-out);
+    }
+
+    .contact-word-inner.visible { transform: translateY(0); }
+
+    /* Stagger per word */
+    .contact-word:nth-child(1) .contact-word-inner { transition-delay: 0.08s; }
+    .contact-word:nth-child(2) .contact-word-inner { transition-delay: 0.18s; }
+    .contact-word:nth-child(3) .contact-word-inner { transition-delay: 0.28s; }
+
+    /* Scroll indicator */
+    .contact-scroll-cue {
+      position: absolute;
+      bottom: 32px;
+      right: var(--gutter);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      transition: opacity 0.7s var(--ease-out) 1.2s;
+    }
+
+    .contact-scroll-cue.visible { opacity: 1; }
+
+    .contact-scroll-cue span {
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .contact-scroll-line {
+      width: 1px;
+      height: 40px;
+      background: var(--warm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-scroll-line::after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--accent);
+      animation: scrollPulse 2.2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%   { top: -100%; }
+      50%  { top: 100%; }
+      100% { top: 100%; }
+    }
+
+    /* ── Main content layout ── */
+    .contact-main {
+      background: var(--surface);
+      border-top: 0.5px solid var(--line-light);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    /* Left — form */
+    .contact-form-col {
+      padding: clamp(64px, 10vh, 120px) var(--gutter) clamp(64px, 10vh, 120px) var(--gutter);
+      border-right: 0.5px solid var(--line-light);
+    }
+
+    .contact-form-title {
+      font-family: var(--font-heading);
+      font-weight: 200;
+      font-size: clamp(28px, 3.5vw, 48px);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: clamp(32px, 5vh, 56px);
+      padding-bottom: 0.1em;
+    }
+
+    /* Type selector */
+    .type-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: clamp(32px, 5vh, 48px);
+    }
+
+    .type-selector-label {
+      width: 100%;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .type-btn {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      padding: 10px 18px;
+      border: 0.5px solid var(--warm);
+      color: var(--muted);
+      background: transparent;
+      cursor: pointer;
+      transition: border-color 0.3s, color 0.3s, background 0.3s;
+      border-radius: 0;
+      text-align: left;
+    }
+
+    .type-btn:hover {
+      border-color: var(--text);
+      color: var(--text);
+    }
+
+    .type-btn.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(196, 83, 26, 0.05);
+    }
+
+    /* Form fields */
+    .form-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text);
+      background: transparent;
+      border: none;
+      border-bottom: 0.5px solid var(--warm);
+      padding: 10px 0;
+      outline: none;
+      transition: border-color 0.3s;
+      border-radius: 0;
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-bottom-color: var(--accent);
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--warm);
+      font-weight: 400;
+    }
+
+    .form-select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A6A52' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 4px center;
+      padding-right: 24px;
+    }
+
+    .form-textarea {
+      resize: none;
+      min-height: 100px;
+      line-height: 1.6;
+    }
+
+    /* Budget field — hidden unless relevant type */
+    .budget-group {
+      display: none;
+    }
+
+    .budget-group.visible {
+      display: flex;
+    }
+
+    /* Submit */
+    .form-submit-wrap {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-submit {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: 100%;
+    }
+
+    .form-submit:hover { background: #a84516; }
+
+    .form-promise {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+
+    /* Success state */
+    .form-success {
+      display: none;
+      padding: 48px 0;
+      text-align: left;
+    }
+
+    .form-success.visible { display: block; }
+
+    .form-success-title {
+      font-family: var(--font-heading);
+      font-weight: 200;
+      font-size: clamp(28px, 4vw, 52px);
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 16px;
+      padding-bottom: 0.1em;
+    }
+
+    .form-success-body {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Right — studio details */
+    .contact-details-col {
+      padding: clamp(64px, 10vh, 120px) var(--gutter) clamp(64px, 10vh, 120px) clamp(40px, 5vw, 80px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-detail-block {
+      margin-bottom: 48px;
+    }
+
+    .contact-detail-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .contact-detail-value {
+      font-size: clamp(14px, 1.4vw, 18px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.5;
+      display: block;
+      transition: color 0.3s;
+    }
+
+    a.contact-detail-value:hover { color: var(--accent); }
+
+    /* Languages */
+    .contact-languages {
+      margin-top: auto;
+      padding-top: 48px;
+      border-top: 0.5px solid var(--line-light);
+    }
+
+    .contact-languages-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .contact-languages-list {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 2;
+    }
+
+    /* ── Consulting block ── */
+    .consulting-section {
+      padding: clamp(80px, 12vh, 140px) var(--gutter);
+      background: var(--bg);
+      border-top: 0.5px solid var(--line-light);
+    }
+
+    .consulting-header {
+      max-width: 640px;
+      margin-bottom: clamp(48px, 7vh, 80px);
+    }
+
+    .consulting-title {
+      font-family: var(--font-heading);
+      font-weight: 200;
+      font-size: clamp(32px, 5vw, 64px);
+      letter-spacing: -0.025em;
+      line-height: 1.0;
+      color: var(--text);
+      padding-bottom: 0.1em;
+      margin-bottom: 16px;
+    }
+
+    .consulting-intro {
+      font-size: clamp(14px, 1.2vw, 17px);
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .consulting-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 0.5px solid var(--line-light);
+    }
+
+    .consulting-tier {
+      padding: clamp(32px, 5vh, 56px) clamp(24px, 3vw, 48px) clamp(32px, 5vh, 56px) 0;
+      border-right: 0.5px solid var(--line-light);
+      position: relative;
+    }
+
+    .consulting-tier:last-child {
+      border-right: none;
+      padding-right: 0;
+      padding-left: clamp(24px, 3vw, 48px);
+    }
+
+    .consulting-tier:nth-child(2) {
+      padding-left: clamp(24px, 3vw, 48px);
+    }
+
+    .consulting-tier-number {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .consulting-tier-title {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: clamp(20px, 2.5vw, 32px);
+      letter-spacing: -0.015em;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.1;
+      padding-bottom: 0.1em;
+    }
+
+    .consulting-tier-body {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .consulting-tier-cta {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.3s var(--ease-out);
+      text-decoration: none;
+    }
+
+    .consulting-tier-cta:hover { gap: 14px; }
+
+    /* ── Footer override for contact page ── */
+    .contact-footer-rule {
+      height: 0.5px;
+      background: var(--line-light);
+      margin: 0 var(--gutter);
+    }
+
+    /* ── Mobile responsive ── */
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-form-col {
+        border-right: none;
+        border-bottom: 0.5px solid var(--line-light);
+      }
+      .contact-details-col {
+        padding-left: var(--gutter);
+      }
+      .contact-languages { margin-top: 32px; }
+      .form-row { grid-template-columns: 1fr; }
+      .consulting-grid {
+        grid-template-columns: 1fr;
+      }
+      .consulting-tier {
+        border-right: none;
+        border-bottom: 0.5px solid var(--line-light);
+        padding: clamp(28px, 4vh, 48px) 0;
+      }
+      .consulting-tier:last-child {
+        border-bottom: none;
+        padding-left: 0;
+      }
+      .consulting-tier:nth-child(2) { padding-left: 0; }
+    }
+
+    @media (max-width: 600px) {
+      .contact-hero-headline {
+        font-size: clamp(48px, 16vw, 80px);
+      }
+      .type-selector { flex-direction: column; }
+      .type-btn { width: 100%; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yasmine Mahmoudieh",
+    "jobTitle": "Global Impact Architect and Creative Director",
+    "url": "https://mahmoudieh.com",
+    "image": "https://www.gspeakers.com/wp-content/uploads/2024/06/Yasmine-Mahmoudieh-Profile-Picture1.webp",
+    "description": "Award-winning architect, interior designer, sustainability consultant, and founder of Mahmoudieh Studio. Speaker at COP28, World Economic Forum Davos, and 100+ international events across 30+ countries.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "71 Fulham Park Gardens",
+      "addressLocality": "London",
+      "postalCode": "SW6 4LB",
+      "addressCountry": "GB"
+    },
+    "email": "design@mahmoudieh.com",
+    "telephone": "+44-7540-136-273",
+    "sameAs": [
+      "https://www.instagram.com/yasmine_mahmoudieh/",
+      "https://uk.linkedin.com/in/yasminemahmoudieh/en",
+      "https://www.facebook.com/people/Yasmine-Mahmoudieh/100057136273118/",
+      "https://x.com/mahmoudieh_arch",
+      "https://www.youtube.com/@yasmine_mahmoudieh"
+    ],
+    "knowsLanguage": ["English", "French", "German", "Spanish", "Italian", "Farsi"],
+    "alumniOf": ["Florence", "Geneva", "San Francisco", "Los Angeles"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Mahmoudieh Studio",
+      "url": "https://mahmoudieh.com"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Mahmoudieh Studio",
+    "url": "https://mahmoudieh.com",
+    "logo": "https://res.cloudinary.com/dpqesgjdf/image/upload/v1777711967/yasmine-mahmoudieh-logo_2.png",
+    "image": "https://res.cloudinary.com/dpqesgjdf/image/upload/v1777720555/7R103896_1_1_ao84xi.jpg",
+    "description": "A global impact design studio specialising in regenerative luxury hospitality, aviation, mixed-use and cultural spaces.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "71 Fulham Park Gardens",
+      "addressLocality": "London",
+      "postalCode": "SW6 4LB",
+      "addressCountry": "GB"
+    },
+    "email": "design@mahmoudieh.com",
+    "telephone": "+44-7540-136-273",
+    "founder": {
+      "@type": "Person",
+      "name": "Yasmine Mahmoudieh"
+    },
+    "areaServed": "Worldwide",
+    "sameAs": [
+      "https://www.instagram.com/yasmine_mahmoudieh/",
+      "https://uk.linkedin.com/in/yasminemahmoudieh/en"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- NAV — identical to index.html -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Mahmoudieh Studio — Home"><img src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777711967/yasmine-mahmoudieh-logo_2.png" class="nav-logo-img nav-logo-img--dark" alt="Mahmoudieh Studio" height="28"><img src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777712094/yasmine-mahmoudieh-logo-white_oexygq.png" class="nav-logo-img nav-logo-img--white" alt="Mahmoudieh Studio" height="28"></a>
+    <ul class="nav-links" role="list">
+
+      <li><a href="about.html">About</a></li>
+
+      <li><a href="insights.html">Insights</a></li>
+
+      <li class="nav-item--has-dropdown">
+        <a href="projects.html" aria-haspopup="true">Projects</a>
+        <div class="nav-dropdown" role="menu">
+          <div>
+            <span class="nav-dropdown-col-label">Sectors</span>
+            <div class="nav-dropdown-sectors">
+              <a href="projects.html?sector=hospitality" role="menuitem">Hospitality</a>
+              <a href="projects.html?sector=residences" role="menuitem">Residences</a>
+              <a href="projects.html?sector=mixed-use" role="menuitem">Mixed Use</a>
+              <a href="projects.html?sector=exhibition" role="menuitem">Exhibition</a>
+              <a href="projects.html?sector=retail" role="menuitem">Retail</a>
+              <a href="projects.html?sector=office" role="menuitem">Office Spaces</a>
+              <a href="projects.html?sector=travel" role="menuitem">Travel</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-featured">
+            <span class="nav-dropdown-col-label">Featured</span>
+            <div class="nav-dropdown-project">
+              <img class="nav-dropdown-thumb" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715787/Screenshot_2026-03-27_222917_fakzbq.png" alt="Nevai Hotel" loading="lazy">
+              <div>
+                <div class="nav-dropdown-project-name">Nevai Hotel</div>
+                <div class="nav-dropdown-project-loc">Verbier, Switzerland · Hospitality</div>
+              </div>
+            </div>
+            <div class="nav-dropdown-project">
+              <img class="nav-dropdown-thumb" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714949/Screenshot_2026-03-21_214441_oifbpa.png" alt="Augeo Art Space" loading="lazy">
+              <div>
+                <div class="nav-dropdown-project-name">Augeo Art Space</div>
+                <div class="nav-dropdown-project-loc">Rimini, Italy · Exhibition</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="press.html">Press</a></li>
+
+      <li><a href="shop.html">Shop</a></li>
+
+      <li><a href="contact.html" class="active">Contact</a></li>
+
+    </ul>
+    <a href="contact.html" class="nav-cta">Start a Project →</a>
+    <button class="nav-hamburger" id="navHam" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navOverlay">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true" role="dialog">
+    <ul role="list">
+      <li><a href="about.html">About</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-overlay-cta">Start a Project →</a>
+  </div>
+
+  <!-- ============================================================
+       SECTION 01 — HERO
+  ============================================================ -->
+  <section class="contact-hero" aria-label="Contact hero">
+
+    <span class="contact-hero-eyebrow" id="heroEyebrow">
+      Mahmoudieh Studio · London · Global
+    </span>
+
+    <h1 class="contact-hero-headline" aria-label="Let's begin.">
+      <span class="contact-word">
+        <span class="contact-word-inner" id="hw0">Let's</span>
+      </span>
+      <span class="contact-word">
+        <span class="contact-word-inner" id="hw1">begin.</span>
+      </span>
+    </h1>
+
+    <div class="contact-scroll-cue" id="scrollCue" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="contact-scroll-line"></div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       SECTION 02 — CONSULTING BLOCK
+  ============================================================ -->
+  <section class="consulting-section" aria-label="Consulting services">
+
+    <div class="consulting-header">
+      <span class="eyebrow reveal">Consulting &amp; Advisory</span>
+      <h2 class="consulting-title reveal delay-1">
+        Not every engagement<br>begins with a brief.
+      </h2>
+      <p class="consulting-intro reveal delay-2">
+        Some of our most transformative work has begun with an audit, a workshop, or a single strategy session. These are our entry points — structured, time-bounded, and immediately actionable.
+      </p>
+    </div>
+
+    <div class="consulting-grid">
+
+      <div class="consulting-tier reveal-left">
+        <span class="consulting-tier-number">01</span>
+        <h3 class="consulting-tier-title">Experience &amp;<br>Sustainability Audit</h3>
+        <p class="consulting-tier-body">A structured review of your property's sensory performance, material impact, and brand coherence. Delivered as a written report with prioritised recommendations. The clearest entry point into working together.</p>
+        <a href="#contactForm" class="consulting-tier-cta" data-prefill="audit">Request an audit →</a>
+      </div>
+
+      <div class="consulting-tier reveal">
+        <span class="consulting-tier-number">02</span>
+        <h3 class="consulting-tier-title">Full Concept &amp;<br>Design Engagement</h3>
+        <p class="consulting-tier-body">From vision to opening. We take full creative responsibility for a project — architecture, interiors, brand identity, materials, and sensory design — across any sector, at any scale.</p>
+        <a href="#contactForm" class="consulting-tier-cta" data-prefill="hotel">Start a project →</a>
+      </div>
+
+      <div class="consulting-tier reveal-right">
+        <span class="consulting-tier-number">03</span>
+        <h3 class="consulting-tier-title">Workshops &amp;<br>Advisory</h3>
+        <p class="consulting-tier-body">Half-day and full-day strategy sessions for ownership groups, hotel brands, and design teams. Topics include regenerative design strategy, multi-sensory experience frameworks, and future-of-luxury positioning.</p>
+        <a href="https://calendly.com/design-mahmoudieh/15min" target="_blank" rel="noopener noreferrer" class="consulting-tier-cta">Book a strategy call →</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       SECTION 03 — FORM + STUDIO DETAILS
+  ============================================================ -->
+  <section class="contact-main" aria-label="Contact form">
+    <div class="contact-grid">
+
+      <!-- Left: Form -->
+      <div class="contact-form-col">
+
+        <h2 class="contact-form-title reveal">
+          Every project begins<br>with a conversation.
+        </h2>
+
+        <!-- Type selector -->
+        <div class="type-selector stagger" role="group" aria-label="Enquiry type">
+          <span class="type-selector-label">I am enquiring about</span>
+          <button class="type-btn" data-type="hotel" aria-pressed="false">Hotel / Resort / Residence</button>
+          <button class="type-btn" data-type="brand" aria-pressed="false">Brand / Cultural Institution</button>
+          <button class="type-btn" data-type="speaking" aria-pressed="false">Speaking &amp; Teaching</button>
+          <button class="type-btn" data-type="products" aria-pressed="false">Products &amp; Collaboration</button>
+          <button class="type-btn" data-type="audit" aria-pressed="false">Consulting &amp; Audit</button>
+        </div>
+
+        <!-- Hidden type value -->
+        <input type="hidden" id="enquiryType" name="enquiry_type" value="">
+
+        <!-- Form fields -->
+        <form id="contactForm" novalidate>
+          <div class="form-fields stagger">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fieldName">Name</label>
+                <input class="form-input" type="text" id="fieldName" name="name" placeholder="Your name" autocomplete="name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="fieldOrg">Organisation</label>
+                <input class="form-input" type="text" id="fieldOrg" name="organisation" placeholder="Studio / Company" autocomplete="organization">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fieldEmail">Email</label>
+                <input class="form-input" type="email" id="fieldEmail" name="email" placeholder="your@email.com" autocomplete="email" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="fieldPhone">Phone <span style="opacity:0.5;">(optional)</span></label>
+                <input class="form-input" type="tel" id="fieldPhone" name="phone" placeholder="+44 000 000 0000" autocomplete="tel">
+              </div>
+            </div>
+
+            <!-- Budget — shown only for hotel/brand/audit types -->
+            <div class="form-group budget-group" id="budgetGroup">
+              <label class="form-label" for="fieldBudget">Approximate budget</label>
+              <select class="form-select" id="fieldBudget" name="budget">
+                <option value="" disabled selected>Select a range</option>
+                <option value="under-500k">Under €500,000</option>
+                <option value="500k-2m">€500,000 – €2M</option>
+                <option value="2m-10m">€2M – €10M</option>
+                <option value="10m-plus">€10M+</option>
+                <option value="discuss">Prefer to discuss</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="fieldMessage">Message</label>
+              <textarea class="form-textarea" id="fieldMessage" name="message" placeholder="Tell us about your project, timeline, or question…" rows="5" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="fieldSource">How did you hear about us?</label>
+              <select class="form-select" id="fieldSource" name="source">
+                <option value="" disabled selected>Select one</option>
+                <option value="referral">Personal referral</option>
+                <option value="press">Press or media</option>
+                <option value="speaking">Speaking event</option>
+                <option value="social">Social media</option>
+                <option value="search">Search</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- Spam honeypot — hidden from users; bots fill it in and Formspree silently discards the submission -->
+          <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="New project enquiry — mahmoudieh.com">
+
+          <div class="form-submit-wrap">
+            <button class="form-submit" type="submit" id="formSubmit">
+              Send →
+            </button>
+            <p class="form-promise">
+              We respond to every enquiry personally, within 48 hours.
+            </p>
+          </div>
+
+        </form>
+
+        <!-- Success state -->
+        <div class="form-success" id="formSuccess" aria-live="polite">
+          <h3 class="form-success-title">Thank you.</h3>
+          <p class="form-success-body">
+            Your message has been received. We'll respond personally within 48 hours.<br><br>
+            In the meantime, explore our <a href="projects.html" style="color:var(--accent);border-bottom:0.5px solid var(--accent);">recent projects</a> or read our <a href="insights.html" style="color:var(--accent);border-bottom:0.5px solid var(--accent);">latest thinking</a>.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Right: Studio details -->
+      <div class="contact-details-col">
+
+        <div>
+          <div class="contact-detail-block reveal">
+            <span class="contact-detail-label">Studio</span>
+            <span class="contact-detail-value">71 Fulham Park Gardens</span>
+            <span class="contact-detail-value">London SW6 4LB, United Kingdom</span>
+          </div>
+
+          <div class="contact-detail-block reveal delay-1">
+            <span class="contact-detail-label">Email</span>
+            <a href="mailto:design@mahmoudieh.com" class="contact-detail-value">design@mahmoudieh.com</a>
+          </div>
+
+          <div class="contact-detail-block reveal delay-2">
+            <span class="contact-detail-label">Phone</span>
+            <a href="tel:+447540136273" class="contact-detail-value">+44 7540 136 273</a>
+          </div>
+
+          <div class="contact-detail-block reveal delay-3">
+            <span class="contact-detail-label">Based in</span>
+            <span class="contact-detail-value">London · Milan</span>
+            <span class="contact-detail-value" style="color:var(--muted);font-size:13px;">Projects delivered globally</span>
+          </div>
+        </div>
+
+        <div class="contact-languages reveal">
+          <span class="contact-languages-label">We speak</span>
+          <div class="contact-languages-list">
+            English · French · German<br>
+            Spanish · Italian · Farsi
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo"><img src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777712094/yasmine-mahmoudieh-logo-white_oexygq.png" class="footer-logo-img" alt="Mahmoudieh Studio" height="24"></span>
+        <p class="footer-tagline">Brand Storytelling · Regenerative Design · Multisensory Experience</p>
+      </div>
+      <div>
+        <span class="footer-col-label">Navigation</span>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="about.html">About</a>
+          <a href="insights.html">Insights</a>
+          <a href="projects.html">Projects</a>
+          <a href="press.html">Press</a>
+        </nav>
+      </div>
+      <div>
+        <span class="footer-col-label">Connect</span>
+        <nav class="footer-nav" aria-label="Footer links">
+          <a href="shop.html">Shop</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://impactdesignnow.com" target="_blank" rel="noopener noreferrer">Impact Design Now</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-rule" aria-hidden="true"></div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© Mahmoudieh Studio · London · All rights reserved</span>
+      <div class="footer-socials"><a href="https://www.instagram.com/yasmine_mahmoudieh/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a><a href="https://uk.linkedin.com/in/yasminemahmoudieh/en" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="https://www.facebook.com/people/Yasmine-Mahmoudieh/100057136273118/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://x.com/mahmoudieh_arch" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.731-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.youtube.com/@yasmine_mahmoudieh" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+  (function () {
+    'use strict';
+
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ── Utilities ── */
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+    /* ── Scroll state ── */
+    var raw = 0, smooth = 0;
+    window.addEventListener('scroll', function () { raw = window.scrollY; }, { passive: true });
+
+    /* ── Scroll progress bar ── */
+    var progressBar = document.getElementById('scrollProgress');
+
+    /* ── Nav auto-hide / peek ── */
+    var nav = document.getElementById('nav');
+    var navHidden = false;
+    var navPeekTimer = null;
+
+    function showNav() {
+      if (!nav) return;
+      nav.classList.remove('nav--hidden');
+      nav.classList.add('nav--peek');
+    }
+
+    function hideNav() {
+      if (!nav) return;
+      nav.classList.remove('nav--peek');
+      nav.classList.add('nav--hidden');
+    }
+
+    document.addEventListener('mousemove', function (e) {
+      if (e.clientY < 80) {
+        showNav();
+        clearTimeout(navPeekTimer);
+        navPeekTimer = setTimeout(function () {
+          if (navHidden) hideNav();
+        }, 1800);
+      }
+    });
+
+    /* ── Custom cursor ── */
+    var cursor = document.getElementById('cursor');
+    var cring = document.getElementById('cursorRing');
+    var cx = 0, cy = 0, rx = 0, ry = 0;
+
+    if (cursor && cring) {
+      document.addEventListener('mousemove', function (e) {
+        cx = e.clientX; cy = e.clientY;
+        cursor.style.transform = 'translate(' + cx + 'px,' + cy + 'px)';
+      });
+      document.querySelectorAll('a, button, .type-btn, .consulting-tier-cta').forEach(function (el) {
+        el.addEventListener('mouseenter', function () { cring.classList.add('is-hovering'); });
+        el.addEventListener('mouseleave', function () { cring.classList.remove('is-hovering'); });
+      });
+    }
+
+    /* ── Nav hamburger ── */
+    var navHam = document.getElementById('navHam');
+    var navOverlay = document.getElementById('navOverlay');
+
+    if (navHam && navOverlay) {
+      navHam.addEventListener('click', function () {
+        var open = navHam.classList.toggle('open');
+        navOverlay.classList.toggle('open', open);
+        navOverlay.setAttribute('aria-hidden', !open);
+        navHam.setAttribute('aria-expanded', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      navOverlay.querySelectorAll('a').forEach(function (l) {
+        l.addEventListener('click', function () {
+          navHam.classList.remove('open');
+          navOverlay.classList.remove('open');
+          navOverlay.setAttribute('aria-hidden', 'true');
+          navHam.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+
+    /* ── rAF loop ── */
+    (function tick() {
+      smooth = lerp(smooth, raw, 0.08);
+
+      /* Scroll progress bar */
+      if (progressBar) {
+        var total = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (total > 0 ? raw / total * 100 : 0) + '%';
+      }
+
+      /* Cursor ring lerp */
+      if (cring) {
+        rx = lerp(rx, cx, 0.1);
+        ry = lerp(ry, cy, 0.1);
+        cring.style.transform = 'translate(' + rx + 'px,' + ry + 'px)';
+      }
+
+      /* Nav — always visible on contact page (no theatre to hide during) */
+      if (nav) {
+        var scrolled = raw > 60;
+        nav.classList.toggle('scrolled', scrolled);
+        /* Show nav after scrolling past hero */
+        if (raw > window.innerHeight * 0.3) {
+          navHidden = true;
+          if (!nav.classList.contains('nav--peek')) {
+            nav.classList.add('nav--hidden');
+          }
+        } else {
+          navHidden = false;
+          nav.classList.remove('nav--hidden', 'nav--peek');
+        }
+      }
+
+      requestAnimationFrame(tick);
+    })();
+
+    /* ── Hero entrance ── */
+    function heroEntrance() {
+      var words = document.querySelectorAll('.contact-word-inner');
+      var eyebrow = document.getElementById('heroEyebrow');
+      var cue = document.getElementById('scrollCue');
+
+      setTimeout(function () {
+        words.forEach(function (w) { w.classList.add('visible'); });
+      }, 150);
+
+      setTimeout(function () {
+        if (eyebrow) eyebrow.classList.add('visible');
+        if (cue) cue.classList.add('visible');
+      }, 200);
+    }
+
+    if (reduced) {
+      document.querySelectorAll('.contact-word-inner').forEach(function (w) { w.classList.add('visible'); });
+      var ey = document.getElementById('heroEyebrow');
+      var sc = document.getElementById('scrollCue');
+      if (ey) ey.classList.add('visible');
+      if (sc) sc.classList.add('visible');
+    } else {
+      heroEntrance();
+    }
+
+    /* ── IntersectionObserver reveals ── */
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-clip, .stagger, .word-reveal').forEach(function (el) {
+      if (reduced) { el.classList.add('visible'); }
+      else { obs.observe(el); }
+    });
+
+    /* ── Query param pre-fill ── */
+    var params = new URLSearchParams(window.location.search);
+    var typeParam = params.get('type');
+    var typeMap = {
+      'speaking': 'speaking',
+      'products': 'products',
+      'audit':    'audit',
+      'hotel':    'hotel',
+      'brand':    'brand'
+    };
+
+    if (typeParam && typeMap[typeParam]) {
+      var targetBtn = document.querySelector('.type-btn[data-type="' + typeMap[typeParam] + '"]');
+      if (targetBtn) {
+        setTimeout(function () { targetBtn.click(); }, 400);
+      }
+    }
+
+    /* ── Type selector ── */
+    var typeBtns = document.querySelectorAll('.type-btn');
+    var enquiryTypeInput = document.getElementById('enquiryType');
+    var budgetGroup = document.getElementById('budgetGroup');
+    var budgetTypes = ['hotel', 'brand', 'audit'];
+
+    typeBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        typeBtns.forEach(function (b) {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+
+        var type = btn.dataset.type;
+        if (enquiryTypeInput) enquiryTypeInput.value = type;
+
+        /* Show/hide budget field */
+        if (budgetGroup) {
+          budgetGroup.classList.toggle('visible', budgetTypes.indexOf(type) !== -1);
+        }
+      });
+    });
+
+    /* ── Consulting tier CTAs — prefill form and scroll ── */
+    document.querySelectorAll('.consulting-tier-cta[data-prefill]').forEach(function (cta) {
+      cta.addEventListener('click', function (e) {
+        e.preventDefault();
+        var type = cta.dataset.prefill;
+        var btn = document.querySelector('.type-btn[data-type="' + type + '"]');
+        if (btn) btn.click();
+        var form = document.getElementById('contactForm');
+        if (form) {
+          form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    /* ── Form submission ── */
+    var form = document.getElementById('contactForm');
+    var formSuccess = document.getElementById('formSuccess');
+    var formSubmit = document.getElementById('formSubmit');
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        /* Basic validation */
+        var name = document.getElementById('fieldName');
+        var email = document.getElementById('fieldEmail');
+        var message = document.getElementById('fieldMessage');
+        var valid = true;
+
+        [name, message].forEach(function (field) {
+          if (!field || !field.value.trim()) {
+            if (field) field.style.borderBottomColor = 'var(--accent)';
+            valid = false;
+          } else {
+            if (field) field.style.borderBottomColor = '';
+          }
+        });
+
+        /* Email format validation */
+        var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailRe.test(email.value.trim())) {
+          if (email) email.style.borderBottomColor = 'var(--accent)';
+          valid = false;
+        } else {
+          if (email) email.style.borderBottomColor = '';
+        }
+
+        if (!valid) return;
+
+        /* Submit to Formspree */
+        if (formSubmit) {
+          formSubmit.textContent = 'Sending…';
+          formSubmit.disabled = true;
+        }
+
+        var data = new FormData(form);
+
+        fetch('https://formspree.io/f/xqeneygy', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(function (res) {
+          if (res.ok) {
+            form.style.display = 'none';
+            if (formSuccess) formSuccess.classList.add('visible');
+          } else {
+            if (formSubmit) {
+              formSubmit.textContent = 'Send Message →';
+              formSubmit.disabled = false;
+              formSubmit.style.borderBottomColor = 'var(--accent)';
+            }
+          }
+        })
+        .catch(function () {
+          if (formSubmit) {
+            formSubmit.textContent = 'Send Message →';
+            formSubmit.disabled = false;
+          }
+        });
+      });
+    }
+
+  })();
+  </script>
+
+
+  <!-- Cookie consent -->
+  <div class="cookie-banner cookie-hidden" id="cookieBanner" role="alertdialog" aria-label="Cookie consent">
+    <p class="cookie-text">This site uses cookies to improve your experience. By continuing to browse you agree to our use of cookies.</p>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-btn--decline" id="cookieDecline">Decline</button>
+      <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Accept</button>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var banner=document.getElementById('cookieBanner');
+    if(!banner)return;
+    var consent=localStorage.getItem('ym_cookie_consent');
+    if(!consent){
+      setTimeout(function(){ banner.classList.remove('cookie-hidden'); }, 1200);
+    }
+    document.getElementById('cookieAccept').addEventListener('click',function(){
+      localStorage.setItem('ym_cookie_consent','accepted');
+      banner.classList.add('cookie-hidden');
+    });
+    document.getElementById('cookieDecline').addEventListener('click',function(){
+      localStorage.setItem('ym_cookie_consent','declined');
+      banner.classList.add('cookie-hidden');
+    });
+  })();
+  </script>
+</body>
+</html>

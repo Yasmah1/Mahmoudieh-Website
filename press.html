@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data:; connect-src 'self' https://formspree.io; font-src 'self' https://fonts.gstatic.com; object-src 'none';">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press — Mahmoudieh Studio</title>
+  <meta name="description" content="Yasmine Mahmoudieh — global speaker, published voice, and ambassador for regenerative luxury design.">
+  <link rel="icon" href="YM-3.ico" type="image/x-icon">
+  <link rel="canonical" href="https://mahmoudieh.com/press.html">
+  <meta name="robots" content="index, follow">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mahmoudieh.com/press.html">
+  <meta property="og:title" content="Press — Mahmoudieh Studio">
+  <meta property="og:description" content="Yasmine Mahmoudieh — global speaker, published voice, and ambassador for regenerative luxury design.">
+  <meta property="og:image" content="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777720555/7R103896_1_1_ao84xi.jpg">
+  <meta property="og:site_name" content="Mahmoudieh Studio">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Press — Mahmoudieh Studio">
+  <meta name="twitter:description" content="Yasmine Mahmoudieh — global speaker, published voice, and ambassador for regenerative luxury design.">
+  <meta name="twitter:image" content="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777720555/7R103896_1_1_ao84xi.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #nav .nav-logo,
+    #nav .nav-links a { color: var(--text); }
+    #nav.nav--hero-mode .nav-logo,
+    #nav.nav--hero-mode .nav-links a { color: var(--text); }
+    #nav .nav-links a:hover { color: var(--accent); }
+
+    .press-theatre-wrap {
+      position: relative;
+      width: 100%;
+      left: 0;
+    }
+
+    .press-theatre {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    /* S1 hero image — fades out as S2 begins */
+    .press-s1-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: url('https://res.cloudinary.com/dpqesgjdf/image/upload/w_1920,f_webp,q_auto/v1777801611/WhatsApp_Image_2026-04-22_at_1.55.25_AM_cwp8i5.jpg');
+      background-size: cover;
+      background-position: center;
+      will-change: opacity;
+    }
+
+    /* Dark gradient overlay over hero image */
+    .press-s1-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(31,28,24,0.88) 0%, rgba(31,28,24,0.45) 55%, rgba(31,28,24,0.12) 85%, transparent 100%);
+    }
+
+    .press-spacer-1 {
+      height: 450vh;
+      width: 100%;
+      pointer-events: none;
+    }
+
+    /* S4 — normal flow */
+    .press-media {
+      position: relative;
+      z-index: 1;
+      background: var(--bg);
+      padding: clamp(80px, 11vh, 120px) var(--gutter);
+    }
+
+    /* Theatre 2 */
+    .press-theatre-2 {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .press-spacer-2 {
+      height: 350vh;
+      width: 100%;
+      pointer-events: none;
+      display: block;
+    }
+
+    /* S4 card reveal */
+    .s4-card {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    }
+
+    .s4-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .press-wash {
+      position: absolute;
+      inset: 0;
+      background: var(--bg);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* S1 */
+    .press-headline {
+      position: absolute;
+      bottom: clamp(100px, 15vh, 160px);
+      left: 0; right: 0;
+      padding: 0 var(--gutter);
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .press-line {
+      display: block;
+      font-family: var(--font-heading);
+      font-weight: 200;
+      font-size: clamp(44px, 8.5vw, 130px);
+      line-height: 0.88;
+      letter-spacing: -0.01em;
+      color: #EDE8DF;
+      white-space: nowrap;
+      will-change: transform, opacity;
+      padding-bottom: 0.18em;
+      overflow: visible;
+    }
+
+    .press-hero-sub {
+      position: absolute;
+      bottom: clamp(64px, 8vh, 96px);
+      left: var(--gutter);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(237,232,223,0.90);
+      z-index: 5;
+      pointer-events: none;
+      will-change: opacity;
+    }
+
+    .press-hero-cta-wrap {
+      position: absolute;
+      bottom: clamp(100px, 15vh, 160px);
+      right: var(--gutter);
+      z-index: 5;
+      will-change: opacity;
+    }
+
+    .press-scroll-cue {
+      position: absolute;
+      bottom: 28px;
+      right: var(--gutter);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .press-scroll-cue span {
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .press-cue-line {
+      width: 1px;
+      height: 40px;
+      background: var(--warm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .press-cue-line::after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--accent);
+      animation: cuePulse 2.2s ease-in-out infinite;
+    }
+
+    @keyframes cuePulse {
+      0%   { top: -100%; }
+      50%  { top: 100%; }
+      100% { top: 100%; }
+    }
+
+    /* S2 */
+    .s2-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .s2-eyebrow {
+      position: absolute;
+      top: clamp(80px, 12vh, 120px);
+      left: var(--gutter);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      will-change: opacity;
+    }
+
+    .s2-title {
+      position: absolute;
+      top: clamp(108px, 16vh, 155px);
+      left: var(--gutter);
+      font-family: var(--font-heading);
+      font-weight: 200;
+      font-size: clamp(30px, 4.5vw, 68px);
+      letter-spacing: -0.025em;
+      color: var(--text);
+      line-height: 1;
+      padding-bottom: 0.12em;
+      overflow: visible;
+      will-change: opacity, transform;
+    }
+
+    .s2-topic {
+      position: absolute;
+      left: 0; right: 0;
+      padding: 0 var(--gutter);
+      will-change: transform, opacity;
+      pointer-events: none;
+    }
+
+    .s2-topic-inner {
+      display: grid;
+      grid-template-columns: clamp(44px, 5vw, 72px) 1fr;
+      gap: 0 clamp(16px, 2.5vw, 40px);
+      max-width: 860px;
+    }
+
+    .s2-num {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      padding-top: 6px;
+    }
+
+    .s2-ttitle {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: clamp(20px, 2.8vw, 42px);
+      letter-spacing: -0.015em;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 10px;
+      padding-bottom: 0.1em;
+      overflow: visible;
+    }
+
+    .s2-tdesc {
+      font-size: clamp(13px, 1.1vw, 16px);
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 540px;
+    }
+
+    /* S2.5 */
+    .s25-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      will-change: opacity;
+    }
+
+    /* S3 */
+    .s3-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      overflow: hidden;
+      pointer-events: none;
+      background: var(--surface);
+    }
+
+    .s3-header {
+      position: absolute;
+      top: clamp(80px, 12vh, 120px);
+      left: var(--gutter);
+      z-index: 5;
+      will-change: opacity;
+    }
+
+    .s3-htitle {
+      font-family: var(--font-heading);
+      font-weight: 200;
+      font-size: clamp(26px, 3.8vw, 54px);
+      letter-spacing: -0.01em;
+      color: var(--text);
+      padding-bottom: 0.1em;
+      overflow: visible;
+      margin-top: 8px;
+    }
+
+    .s3-item {
+      position: absolute;
+      left: 0; right: 0;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 0 var(--gutter);
+      will-change: transform, opacity;
+    }
+
+    .s3-name {
+      font-family: var(--font-heading);
+      font-weight: 200;
+      font-size: clamp(26px, 5vw, 80px);
+      letter-spacing: -0.01em;
+      color: var(--text);
+      line-height: 1;
+      white-space: nowrap;
+      overflow: visible;
+    }
+
+    .s3-meta {
+      text-align: right;
+      flex-shrink: 0;
+      margin-left: 24px;
+      will-change: transform;
+    }
+
+    .s3-loc {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .s3-type {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+
+    /* S4 */
+    .s4-wrap {
+      position: relative;
+      pointer-events: all;
+      padding: 0;
+    }
+
+    .s4-hdr {
+      margin-bottom: clamp(20px, 3.5vh, 36px);
+      will-change: opacity, transform;
+    }
+
+    .s4-htitle {
+      font-family: var(--font-heading);
+      font-weight: 200;
+      font-size: clamp(30px, 4.5vw, 68px);
+      letter-spacing: -0.025em;
+      color: var(--text);
+      line-height: 1;
+      padding-bottom: 0.12em;
+      overflow: visible;
+      margin-top: 8px;
+    }
+
+    .s4-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(16px, 2vw, 28px);
+    }
+
+    .s4-card {
+      background: var(--surface);
+      padding: clamp(20px, 2.5vw, 32px);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      will-change: transform, opacity;
+      pointer-events: all;
+      transition: background 0.3s;
+      text-decoration: none;
+      color: inherit;
+      cursor: default;
+    }
+
+    .s4-card:hover { background: var(--warm); }
+
+    .s4-pub {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .s4-ctitle {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: clamp(13px, 1.2vw, 18px);
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+      color: var(--text);
+      overflow: visible;
+      padding-bottom: 0.08em;
+    }
+
+    .s4-cdesc {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .s4-ctag {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .s4-read {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      border-top: 0.5px solid var(--warm);
+      padding-top: 12px;
+      margin-top: 4px;
+      transition: color 0.3s;
+    }
+
+    .s4-read:hover { color: var(--accent); }
+
+    /* S5 */
+    .s5-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .s5-hdr {
+      position: absolute;
+      top: clamp(80px, 12vh, 120px);
+      left: var(--gutter);
+      will-change: opacity;
+    }
+
+    .s5-htitle {
+      font-family: var(--font-heading);
+      font-weight: 200;
+      font-size: clamp(30px, 4.5vw, 68px);
+      letter-spacing: -0.025em;
+      color: var(--text);
+      line-height: 1;
+      padding-bottom: 0.12em;
+      overflow: visible;
+      margin-top: 8px;
+    }
+
+    .s5-row {
+      position: absolute;
+      left: 0; right: 0;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: clamp(12px, 1.8vh, 22px) var(--gutter);
+      border-top: 0.5px solid var(--line-light);
+      will-change: transform, opacity;
+      pointer-events: all;
+    }
+
+    .s5-org {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: clamp(15px, 2vw, 30px);
+      letter-spacing: -0.01em;
+      color: var(--text);
+      overflow: visible;
+      transition: color 0.3s;
+    }
+
+    .s5-row:hover .s5-org { color: var(--accent); }
+
+    .s5-role {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: right;
+      flex-shrink: 0;
+      margin-left: 24px;
+    }
+
+    .s5-awards {
+      position: absolute;
+      bottom: 0;
+      left: 0; right: 0;
+      padding: 0 var(--gutter) clamp(20px, 3.5vh, 40px);
+      will-change: opacity, transform;
+    }
+
+    .s5-awards-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .s5-awards-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 20px;
+    }
+
+    .s5-award {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    /* S6 */
+    .s6-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 var(--gutter);
+      pointer-events: none;
+    }
+
+    .s6-hl {
+      font-family: var(--font-heading);
+      font-weight: 200;
+      font-size: clamp(34px, 6.5vw, 96px);
+      letter-spacing: -0.01em;
+      line-height: 0.9;
+      color: var(--text);
+      margin-bottom: clamp(28px, 5vh, 52px);
+      max-width: 860px;
+      padding-bottom: 0.14em;
+      overflow: visible;
+    }
+
+    .s6-word {
+      display: inline-block;
+      will-change: transform, opacity;
+      margin-right: 0.22em;
+    }
+
+    .s6-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+      will-change: transform, opacity;
+      pointer-events: all;
+    }
+
+    .s6-note {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 460px;
+      will-change: opacity;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yasmine Mahmoudieh",
+    "jobTitle": "Global Impact Architect and Creative Director",
+    "url": "https://mahmoudieh.com",
+    "image": "https://www.gspeakers.com/wp-content/uploads/2024/06/Yasmine-Mahmoudieh-Profile-Picture1.webp",
+    "description": "Award-winning architect, interior designer, sustainability consultant, and founder of Mahmoudieh Studio. Speaker at COP28, World Economic Forum Davos, and 100+ international events across 30+ countries.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "71 Fulham Park Gardens",
+      "addressLocality": "London",
+      "postalCode": "SW6 4LB",
+      "addressCountry": "GB"
+    },
+    "email": "design@mahmoudieh.com",
+    "telephone": "+44-7540-136-273",
+    "sameAs": [
+      "https://www.instagram.com/yasmine_mahmoudieh/",
+      "https://uk.linkedin.com/in/yasminemahmoudieh/en",
+      "https://www.facebook.com/people/Yasmine-Mahmoudieh/100057136273118/",
+      "https://x.com/mahmoudieh_arch",
+      "https://www.youtube.com/@yasmine_mahmoudieh"
+    ],
+    "knowsLanguage": ["English", "French", "German", "Spanish", "Italian", "Farsi"],
+    "alumniOf": ["Florence", "Geneva", "San Francisco", "Los Angeles"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Mahmoudieh Studio",
+      "url": "https://mahmoudieh.com"
+    }
+  }
+  </script>
+</head>
+<body class="theatre-active">
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <nav class="nav nav--hero-mode" id="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Mahmoudieh Studio — Home"><img src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777711967/yasmine-mahmoudieh-logo_2.png" class="nav-logo-img nav-logo-img--dark" alt="Mahmoudieh Studio" height="28"><img src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777712094/yasmine-mahmoudieh-logo-white_oexygq.png" class="nav-logo-img nav-logo-img--white" alt="Mahmoudieh Studio" height="28"></a>
+    <ul class="nav-links" role="list">
+      <li><a href="about.html">About</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li class="nav-item--has-dropdown">
+        <a href="projects.html" aria-haspopup="true">Projects</a>
+        <div class="nav-dropdown" role="menu">
+          <div>
+            <span class="nav-dropdown-col-label">Sectors</span>
+            <div class="nav-dropdown-sectors">
+              <a href="projects.html?sector=hospitality" role="menuitem">Hospitality</a>
+              <a href="projects.html?sector=residences" role="menuitem">Residences</a>
+              <a href="projects.html?sector=mixed-use" role="menuitem">Mixed Use</a>
+              <a href="projects.html?sector=exhibition" role="menuitem">Exhibition</a>
+              <a href="projects.html?sector=retail" role="menuitem">Retail</a>
+              <a href="projects.html?sector=office" role="menuitem">Office Spaces</a>
+              <a href="projects.html?sector=travel" role="menuitem">Travel</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-featured">
+            <span class="nav-dropdown-col-label">Featured</span>
+            <div class="nav-dropdown-project">
+              <img class="nav-dropdown-thumb" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715787/Screenshot_2026-03-27_222917_fakzbq.png" alt="Nevai Hotel" loading="lazy">
+              <div>
+                <div class="nav-dropdown-project-name">Nevai Hotel</div>
+                <div class="nav-dropdown-project-loc">Verbier, Switzerland · Hospitality</div>
+              </div>
+            </div>
+            <div class="nav-dropdown-project">
+              <img class="nav-dropdown-thumb" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714949/Screenshot_2026-03-21_214441_oifbpa.png" alt="Augeo Art Space" loading="lazy">
+              <div>
+                <div class="nav-dropdown-project-name">Augeo Art Space</div>
+                <div class="nav-dropdown-project-loc">Rimini, Italy · Exhibition</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="press.html" class="active">Press</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Start a Project →</a>
+    <button class="nav-hamburger" id="navHam" aria-label="Open navigation" aria-expanded="false" aria-controls="navOverlay">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true" role="dialog">
+    <ul role="list">
+      <li><a href="about.html">About</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-overlay-cta">Start a Project →</a>
+  </div>
+
+  <!-- THEATRE -->
+  <div class="press-theatre-wrap">
+  <div class="press-theatre" id="pressTheatre">
+
+    <div class="press-s1-bg" id="pressS1Bg" aria-hidden="true"></div>
+    <div class="press-wash" id="pressWash" aria-hidden="true"></div>
+
+    <!-- S1 -->
+    <div class="press-headline" id="pressHl" aria-label="The global voice of regenerative luxury.">
+      <span class="press-line" id="pl0">The global voice</span>
+      <span class="press-line" id="pl1">of regenerative</span>
+      <span class="press-line" id="pl2">luxury.</span>
+    </div>
+    <div class="press-hero-sub" id="pSub">Speaking · Media · Ambassadorships</div>
+    <div class="press-hero-cta-wrap" id="pCta"><a href="contact.html?type=speaking" class="btn btn-filled">Book Yasmine →</a></div>
+    <div class="press-scroll-cue" id="pCue" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="press-cue-line"></div>
+    </div>
+
+    <!-- S2: Keynote topics -->
+    <div class="s2-wrap" id="s2Wrap" style="opacity:0;">
+      <span class="s2-eyebrow" id="s2Eye">Speaking &amp; Thought Leadership</span>
+      <div class="s2-title" id="s2Ttl">Keynote Topics</div>
+      <div class="s2-topic" id="s2t0"><div class="s2-topic-inner"><span class="s2-num">01</span><div><h3 class="s2-ttitle">Regenerative Luxury &amp; the Future of Hospitality</h3><p class="s2-tdesc">How hospitality can lead the transition from sustainable to regenerative — designing spaces that restore rather than deplete.</p></div></div></div>
+      <div class="s2-topic" id="s2t1"><div class="s2-topic-inner"><span class="s2-num">02</span><div><h3 class="s2-ttitle">Designing for All Five Senses</h3><p class="s2-tdesc">How light, sound, scent, texture, and temperature can be choreographed to shape memory, loyalty, and measurable commercial outcomes.</p></div></div></div>
+      <div class="s2-topic" id="s2t2"><div class="s2-topic-inner"><span class="s2-num">03</span><div><h3 class="s2-ttitle">The Material Revolution: 400+ Alternatives</h3><p class="s2-tdesc">Why the building industry's default palette is harming both people and planet — and the most beautiful alternatives already available.</p></div></div></div>
+      <div class="s2-topic" id="s2t3"><div class="s2-topic-inner"><span class="s2-num">04</span><div><h3 class="s2-ttitle">Architecture as Brand Identity</h3><p class="s2-tdesc">How luxury brands and hotel groups can use spatial design to create differentiated identities that no digital campaign can replicate.</p></div></div></div>
+      <div class="s2-topic" id="s2t4"><div class="s2-topic-inner"><span class="s2-num">05</span><div><h3 class="s2-ttitle">The Business Case for Sustainable Design</h3><p class="s2-tdesc">Translating ESG commitments into design decisions that protect asset value and create guest experiences commanding premium positioning.</p><a href="https://www.luxuryhospitalityconference.it/eng/speaker/yasmine-mahmoudieh/" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:12px;font-size:10px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);text-decoration:none;pointer-events:all;">View at Luxury Hospitality Conference →</a></div></div></div>
+    </div>
+
+    <!-- S2.5: Marquee moment -->
+    <div class="s25-wrap" id="s25Wrap" style="opacity:0;" aria-hidden="true">
+      <div class="marquee marquee--dark" style="border:none;">
+        <div class="marquee-inner">
+          <span class="marquee-item">Forbes<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Elle Decor Italia<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">The Times<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Business Insider<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Interior Design Magazine<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Hotel Designs<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Yahoo Finance<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Los Angeles Inquirer<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">ArchiExpo<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Forbes<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Elle Decor Italia<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">The Times<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Business Insider<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Interior Design Magazine<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Hotel Designs<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Yahoo Finance<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Los Angeles Inquirer<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">ArchiExpo<span class="marquee-sep">·</span></span>
+        </div>
+      </div>
+      <div class="marquee marquee--dark" style="border:none;border-top:0.5px solid rgba(255,255,255,0.06);">
+        <div class="marquee-inner marquee-inner--reverse">
+          <span class="marquee-item">Regenerative Design<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Multisensory Experience<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">COP28 · Dubai<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">World Economic Forum · Davos<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">400+ Materials<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">30+ Years · 15+ Countries<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Regenerative Design<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">Multisensory Experience<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">COP28 · Dubai<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">World Economic Forum · Davos<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">400+ Materials<span class="marquee-sep">·</span></span>
+          <span class="marquee-item">30+ Years · 15+ Countries<span class="marquee-sep">·</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- S3: Events reel -->
+    <div class="s3-wrap" id="s3Wrap" style="opacity:0;">
+      <div class="s3-header" id="s3Hdr">
+        <span class="eyebrow" style="color:var(--muted);">Flagship Events &amp; Forums</span>
+        <h2 class="s3-htitle">Where the conversation<br>has taken place.</h2>
+      </div>
+      <div id="s3Reel">
+        <div class="s3-item" id="s3i0"><span class="s3-name">COP28</span><div class="s3-meta" id="s3m0"><span class="s3-loc">Dubai</span><span class="s3-type">Climate Leadership</span></div></div>
+        <div class="s3-item" id="s3i1"><span class="s3-name">World Economic Forum</span><div class="s3-meta" id="s3m1"><span class="s3-loc">Davos</span><span class="s3-type">Global Leadership</span></div></div>
+        <div class="s3-item" id="s3i2"><span class="s3-name">MIPIM</span><div class="s3-meta" id="s3m2"><span class="s3-loc">Cannes</span><span class="s3-type">Real Estate</span></div></div>
+        <div class="s3-item" id="s3i3"><span class="s3-name">World Beautiful Business Forum</span><div class="s3-meta" id="s3m3"><span class="s3-loc">Global</span><span class="s3-type">Leadership</span></div></div>
+        <div class="s3-item" id="s3i4"><span class="s3-name">Design Museum</span><div class="s3-meta" id="s3m4"><span class="s3-loc">London</span><span class="s3-type">Cultural</span></div></div>
+        <div class="s3-item" id="s3i5"><span class="s3-name">Arabian Hotel Investment Conference</span><div class="s3-meta" id="s3m5"><span class="s3-loc">Dubai</span><span class="s3-type">Hospitality</span></div></div>
+        <div class="s3-item" id="s3i6"><span class="s3-name">Royal College of Art</span><div class="s3-meta" id="s3m6"><span class="s3-loc">London</span><span class="s3-type">Academic</span></div></div>
+        <div class="s3-item" id="s3i7"><span class="s3-name">Cornell University</span><div class="s3-meta" id="s3m7"><span class="s3-loc">London</span><span class="s3-type">Academic</span></div></div>
+        <div class="s3-item" id="s3i8"><span class="s3-name">EHL École Hôtelière</span><div class="s3-meta" id="s3m8"><span class="s3-loc">Lausanne</span><span class="s3-type">Visiting Professor</span></div></div>
+        <div class="s3-item" id="s3i9"><span class="s3-name">LYFE Institut</span><div class="s3-meta" id="s3m9"><span class="s3-loc">Lyon</span><span class="s3-type">Visiting Professor</span></div></div>
+        <div class="s3-item" id="s3i10"><span class="s3-name">Tophotel Worldtour</span><div class="s3-meta" id="s3m10"><span class="s3-loc">Dubai</span><span class="s3-type">Hospitality Keynote</span></div></div>
+        <div class="s3-item" id="s3i11"><span class="s3-name">Design Summit</span><div class="s3-meta" id="s3m11"><span class="s3-loc">St Moritz</span><span class="s3-type">Luxury Design</span></div></div>
+        <div class="s3-item" id="s3i12"><span class="s3-name">NYU</span><div class="s3-meta" id="s3m12"><span class="s3-loc">New York</span><span class="s3-type">Academic</span></div></div>
+      </div>
+    </div>
+
+  </div><!-- /press-theatre -->
+  <div class="press-spacer-1" id="pressSpacerEl" aria-hidden="true"></div>
+  </div><!-- /press-theatre-wrap -->
+
+  <!-- S4: Media grid — normal flow -->
+  <div class="press-media">
+    <div class="s4-wrap" id="s4Wrap">
+      <div class="s4-hdr" id="s4Hdr">
+        <span class="eyebrow" style="color:var(--muted);">Media &amp; Interviews</span>
+        <h2 class="s4-htitle">In conversation<br>with the world.</h2>
+      </div>
+      <div class="s4-grid">
+        <div class="s4-card" id="s4c0"><span class="s4-pub">Los Angeles Inquirer</span><h3 class="s4-ctitle">The award-winning German-Iranian Architect Yasmine Mahmoudieh makes use of Impact Design to Advocate for the Integration of Ocean Plastic and Mycelium in the Built Environment</h3><p class="s4-cdesc">How one architect is turning the building industry's waste problem into its most compelling design opportunity — from ocean plastic to mycelium, the materials that could define the next century.</p><span class="s4-ctag">Impact · ESG</span><a class="s4-read" href="https://tinyurl.com/2wyu425w" target="_blank" rel="noopener noreferrer">Read →</a></div>
+        <div class="s4-card" id="s4c1"><span class="s4-pub">Hotel Designs</span><h3 class="s4-ctitle">In Conversation With: Yasmine Mahmoudieh, the interior designer with an architect's brilliant mind</h3><p class="s4-cdesc">An in-depth profile exploring how Yasmine's cross-disciplinary formation — equal parts architect and interior designer — produces spaces of rare psychological intelligence.</p><span class="s4-ctag">Profile · Hospitality</span><a class="s4-read" href="https://hoteldesigns.net/industry-news/in-conversation-with-yasmine-mahmoudieh/" target="_blank" rel="noopener noreferrer">Read →</a></div>
+        <div class="s4-card" id="s4c2"><span class="s4-pub">Yahoo Finance</span><h3 class="s4-ctitle">European Cultural Center Invites Architect Yasmine Mahmoudieh</h3><p class="s4-cdesc">Recognition of the studio's expanding role in cultural architecture — the intersection of regenerative design and civic institution at the highest level.</p><span class="s4-ctag">Cultural · Architecture</span><a class="s4-read" href="https://finance.yahoo.com/news/european-cultural-center-invites-architect-145800643.html" target="_blank" rel="noopener noreferrer">Read →</a></div>
+        <div class="s4-card" id="s4c3"><span class="s4-pub">3D Natives</span><h3 class="s4-ctitle">Venice Architecture Biennale: Sustainability and 3D Printing</h3><p class="s4-cdesc">The Venice Architecture Biennale as a platform for the studio's work at the frontier of additive manufacturing and regenerative material thinking.</p><span class="s4-ctag">Exhibition · Sustainability</span><a class="s4-read" href="https://www.3dnatives.com/en/venice-architecture-biennale-sustainability-0906236/" target="_blank" rel="noopener noreferrer">Read →</a></div>
+        <div class="s4-card" id="s4c4"><span class="s4-pub">AZO Build</span><h3 class="s4-ctitle">Yasmine Mahmoudieh: Impact Architect and Regenerative Design Pioneer</h3><p class="s4-cdesc">A profile of the studio's approach to architecture as a discipline of measurable environmental and social impact — building not just for now but for the century ahead.</p><span class="s4-ctag">Profile · Architecture</span><a class="s4-read" href="https://www.azobuild.com/news.aspx?newsID=23449" target="_blank" rel="noopener noreferrer">Read →</a></div>
+        <div class="s4-card" id="s4c5"><span class="s4-pub">Hotel Designs</span><h3 class="s4-ctitle">3D-Printed Furniture: It's A Thing Now</h3><p class="s4-cdesc">How the Flowniversum collection — made from ocean plastic and regenerative materials — is changing what made-to-order furniture can mean for the hospitality sector.</p><span class="s4-ctag">Design · Innovation</span><a class="s4-read" href="https://hoteldesigns.net/industry-news/3d-printed-furniture-its-a-thing-now/" target="_blank" rel="noopener noreferrer">Read →</a></div>
+        <div class="s4-card" id="s4c6"><span class="s4-pub">Stylepark</span><h3 class="s4-ctitle">I Always Fight For My Ideas</h3><p class="s4-cdesc">An intimate portrait of Yasmine's design philosophy — the conviction that beauty and responsibility are not opposing forces, and the tenacity required to prove it in practice.</p><span class="s4-ctag">Profile · Design</span><a class="s4-read" href="https://www.stylepark.com/en/news/i-always-fight-for-my-ideas" target="_blank" rel="noopener noreferrer">Read →</a></div>
+        <div class="s4-card" id="s4c7"><span class="s4-pub">Hotel Year Book</span><h3 class="s4-ctitle">Redefining Hospitality: A Vision for Sustainable and Innovative Design</h3><p class="s4-cdesc">A long-form essay on how the hospitality sector must fundamentally rethink its relationship with materials, environment, and the guest — and the design principles that make it possible.</p><span class="s4-ctag">Opinion · Hospitality</span><a class="s4-read" href="https://www.hotelyearbook.com/article/122000330/redefining-hospitality-a-vision-for-sustainable-and-innovative-design" target="_blank" rel="noopener noreferrer">Read →</a></div>
+        <div class="s4-card" id="s4c8"><span class="s4-pub">Hospitality Net</span><h3 class="s4-ctitle">Yasmine Mahmoudieh — Global Impact Architect</h3><p class="s4-cdesc">The studio's profile on the hospitality industry's leading intelligence platform — a reference point for operators, developers, and investors seeking regenerative design expertise.</p><span class="s4-ctag">Profile · Industry</span><a class="s4-read" href="https://www.hospitalitynet.org/organization/17024143/yasmine-mahmoudieh" target="_blank" rel="noopener noreferrer">Read →</a></div>
+        <div class="s4-card" id="s4c9"><span class="s4-pub">Tophotel News</span><h3 class="s4-ctitle">Yasmine Mahmoudieh Reveals Innovative Hospitality Concept for Kids at IMM Cologne</h3><p class="s4-cdesc">The studio's children's hospitality concept — presented at IMM Cologne — reimagines what it means to design spaces that serve the youngest guests as seriously as any other.</p><span class="s4-ctag">Innovation · Kids</span><a class="s4-read" href="https://tophotel.news/yasmine-mahmoudieh-reveals-innovative-hospitality-concept-for-kids-at-imm-cologne/" target="_blank" rel="noopener noreferrer">Read →</a></div>
+        <div class="s4-card" id="s4c10"><span class="s4-pub">VeganSuite</span><h3 class="s4-ctitle">Redefining Space: Yasmine Mahmoudieh's Blueprint for the Future of Architectural Design</h3><p class="s4-cdesc">A wide-ranging conversation on the future of architectural practice — from regenerative materials and multisensory design to the moral responsibility of those who shape the built world.</p><span class="s4-ctag">Interview · Architecture</span><a class="s4-read" href="https://www.vegansuitestyle.com/en/2024/12/03/redefining-space-yasmine-mahmoudiehs-blueprint-for-the-future-of-architectural-design-a-conversation/" target="_blank" rel="noopener noreferrer">Read →</a></div>
+      </div>
+  </div><!-- /s4-wrap -->
+  </div><!-- /press-media -->
+
+  <div style="height: 100vh; width: 100%; display: block;" aria-hidden="true"></div>
+  <div class="press-theatre-wrap">
+  <!-- Theatre 2: S5 + S6 -->
+  <div class="press-theatre-2" id="pressTheatre2">
+
+    <!-- S5: Ambassadorships + Awards -->
+    <div class="s5-wrap" id="s5Wrap" style="opacity:0;">
+      <div class="s5-hdr" id="s5Hdr">
+        <span class="eyebrow" style="color:var(--muted);">Ambassadorships &amp; Affiliations</span>
+        <h2 class="s5-htitle">Partnerships built<br>on shared conviction.</h2>
+      </div>
+      <div class="s5-row" id="s5r0"><span class="s5-org">HoteliersGuild</span><span class="s5-role">Sirius Academy Award · Global Ambassador</span></div>
+      <div class="s5-row" id="s5r1"><span class="s5-org">World Sustainable Hospitality Alliance</span><span class="s5-role">Strategic Partner</span></div>
+      <div class="s5-row" id="s5r2"><span class="s5-org">ItMustBeNow.com</span><span class="s5-role">Co-Founder &amp; Ambassador</span></div>
+      <div class="s5-row" id="s5r3"><span class="s5-org">Ministry of Sustainability</span><span class="s5-role">Ambassador · UAE</span></div>
+      <div class="s5-row" id="s5r4"><span class="s5-org">Guild for Ethical Travels</span><span class="s5-role">Board Member</span></div>
+      <div class="s5-row" id="s5r5"><span class="s5-org">Leading Hotels of the World</span><span class="s5-role">Leading by Design · One of five European offices</span></div>
+      <div class="s5-awards" id="s5Aw">
+        <span class="s5-awards-label">Recognition</span>
+        <div class="s5-awards-list">
+          <span class="s5-award">5× World Travel Award</span>
+          <span class="s5-award">3× Ahead Award</span>
+          <span class="s5-award">HoteliersGuild Sirius Award</span>
+          <span class="s5-award">Core Design Award · New York</span>
+          <span class="s5-award">European Hotel Design Awards</span>
+          <span class="s5-award">Red Dot Jury</span>
+          <span class="s5-award">IF Design Award Jury</span>
+          <span class="s5-award">Interzum Award Jury</span>
+          <span class="s5-award">Opal Award</span>
+          <span class="s5-award">SIT Furniture Design Award</span>
+          <a class="s5-award" href="https://outstandingpropertyaward.com/jury/yasmine-mahmoudieh/" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;pointer-events:all;">Outstanding Property Award · Jury Member ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- S6: Book CTA -->
+    <div class="s6-wrap" id="s6Wrap" style="opacity:0;">
+      <h2 class="s6-hl" aria-label="Ready to bring this conversation to your audience?">
+        <span class="s6-word" id="s6w0">Ready</span>
+        <span class="s6-word" id="s6w1">to bring</span>
+        <br aria-hidden="true">
+        <span class="s6-word" id="s6w2">this conversation</span>
+        <br aria-hidden="true">
+        <span class="s6-word" id="s6w3">to your audience?</span>
+      </h2>
+      <div class="s6-ctas" id="s6Ctas">
+        <a href="contact.html?type=speaking" class="btn btn-filled">Book a Keynote →</a>
+        <a href="contact.html?type=brand" class="btn btn-outline">Discuss a Partnership →</a>
+      </div>
+      <p class="s6-note" id="s6Note">Available for keynotes, panels, workshops, and academic residencies. We respond to every enquiry personally.</p>
+    </div>
+
+  </div><!-- /press-theatre-2 -->
+  <div class="press-spacer-2" id="pressSpacer2El" aria-hidden="true"></div>
+  </div><!-- /press-theatre-wrap-2 -->
+
+  <div class="post-theatre">
+    <footer class="footer" role="contentinfo">
+      <div class="footer-top">
+        <div><span class="footer-logo"><img src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777712094/yasmine-mahmoudieh-logo-white_oexygq.png" class="footer-logo-img" alt="Mahmoudieh Studio" height="24"></span><p class="footer-tagline">Brand Storytelling · Regenerative Design · Multisensory Experience</p></div>
+        <div><span class="footer-col-label">Navigation</span><nav class="footer-nav" aria-label="Footer navigation"><a href="about.html">About</a><a href="insights.html">Insights</a><a href="projects.html">Projects</a><a href="press.html">Press</a></nav></div>
+        <div><span class="footer-col-label">Connect</span><nav class="footer-nav" aria-label="Footer links"><a href="shop.html">Shop</a><a href="contact.html">Contact</a><a href="https://impactdesignnow.com" target="_blank" rel="noopener noreferrer">Impact Design Now</a></nav></div>
+      </div>
+      <div class="footer-rule" aria-hidden="true"></div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© Mahmoudieh Studio · London · All rights reserved</span>
+        <div class="footer-socials"><a href="https://www.instagram.com/yasmine_mahmoudieh/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a><a href="https://uk.linkedin.com/in/yasminemahmoudieh/en" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="https://www.facebook.com/people/Yasmine-Mahmoudieh/100057136273118/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://x.com/mahmoudieh_arch" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.731-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.youtube.com/@yasmine_mahmoudieh" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+  (function(){
+    'use strict';
+    var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function lerp(a,b,t){return a+(b-a)*t;}
+    function clamp(v,lo,hi){return Math.max(lo,Math.min(hi,v));}
+    function map(v,i0,i1,o0,o1){return o0+clamp((v-i0)/(i1-i0),0,1)*(o1-o0);}
+
+    var raw=0,smooth=0;
+    window.addEventListener('scroll',function(){raw=window.scrollY;},{passive:true});
+
+    var progressBar=document.getElementById('scrollProgress');
+    var nav=document.getElementById('nav');
+    var spacer=document.getElementById('pressSpacerEl');
+    var wash=document.getElementById('pressWash');
+    var s1Bg=document.getElementById('pressS1Bg');
+
+    var pl0=document.getElementById('pl0'),pl1=document.getElementById('pl1'),pl2=document.getElementById('pl2');
+    var pSub=document.getElementById('pSub'),pCta=document.getElementById('pCta'),pCue=document.getElementById('pCue');
+
+    var s2Wrap=document.getElementById('s2Wrap');
+    var s2Eye=document.getElementById('s2Eye'),s2Ttl=document.getElementById('s2Ttl');
+    var s2Topics=[0,1,2,3,4].map(function(i){return document.getElementById('s2t'+i);});
+
+    var s25Wrap=document.getElementById('s25Wrap');
+
+    var s3Wrap=document.getElementById('s3Wrap'),s3Hdr=document.getElementById('s3Hdr');
+    var s3Items=document.querySelectorAll('.s3-item');
+    var s3Metas=[0,1,2,3,4,5,6,7,8,9,10,11,12].map(function(i){return document.getElementById('s3m'+i);});
+
+    var s5Wrap=document.getElementById('s5Wrap'),s5Hdr=document.getElementById('s5Hdr');
+    var s5Rows=[0,1,2,3,4,5].map(function(i){return document.getElementById('s5r'+i);});
+    var s5Aw=document.getElementById('s5Aw');
+
+    var s6Wrap=document.getElementById('s6Wrap');
+    var s6Words=[0,1,2,3].map(function(i){return document.getElementById('s6w'+i);});
+    var s6Ctas=document.getElementById('s6Ctas'),s6Note=document.getElementById('s6Note');
+
+    var R={
+      s1: [0.00,0.16], s2: [0.16,0.60],
+      s3: [0.60,1.00]
+    };
+
+    var LS=[1.0,0.86,0.74], LX=[-110,-92,-76];
+    var WS=[-180,-110,130,-90];
+
+    var navHidden=false,navPeekTimer=null;
+    function showNav(){if(nav){nav.classList.remove('nav--hidden');nav.classList.add('nav--peek');}}
+    function hideNav(){if(nav){nav.classList.remove('nav--peek');nav.classList.add('nav--hidden');}}
+    document.addEventListener('mousemove',function(e){
+      if(e.clientY<80){showNav();clearTimeout(navPeekTimer);navPeekTimer=setTimeout(function(){if(navHidden)hideNav();},1800);}
+    });
+
+    var cursor=document.getElementById('cursor'),cring=document.getElementById('cursorRing');
+    var cx=0,cy=0,rx=0,ry=0;
+    if(cursor&&cring){
+      document.addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;cursor.style.transform='translate('+cx+'px,'+cy+'px)';});
+      document.querySelectorAll('a,button,.s4-card,.s5-row').forEach(function(el){
+        el.addEventListener('mouseenter',function(){cring.classList.add('is-hovering');});
+        el.addEventListener('mouseleave',function(){cring.classList.remove('is-hovering');});
+      });
+    }
+
+    var navHam=document.getElementById('navHam'),navOverlay=document.getElementById('navOverlay');
+    if(navHam&&navOverlay){
+      navHam.addEventListener('click',function(){
+        var open=navHam.classList.toggle('open');
+        navOverlay.classList.toggle('open',open);
+        navOverlay.setAttribute('aria-hidden',!open);
+        navHam.setAttribute('aria-expanded',open);
+        document.body.style.overflow=open?'hidden':'';
+      });
+      navOverlay.querySelectorAll('a').forEach(function(l){
+        l.addEventListener('click',function(){
+          navHam.classList.remove('open');navOverlay.classList.remove('open');
+          navOverlay.setAttribute('aria-hidden','true');navHam.setAttribute('aria-expanded','false');
+          document.body.style.overflow='';
+        });
+      });
+    }
+
+    document.querySelectorAll('.marquee').forEach(function(m){
+      m.addEventListener('mouseenter',function(){m.classList.add('is-paused');});
+      m.addEventListener('mouseleave',function(){m.classList.remove('is-paused');});
+    });
+
+    if(reduced){
+      [s2Wrap,s25Wrap,s3Wrap,s5Wrap,s6Wrap].forEach(function(el){if(el)el.style.opacity=1;});
+      [pl0,pl1,pl2].forEach(function(el){if(el){el.style.opacity=1;el.style.transform='none';}});
+      if(nav)nav.classList.add('scrolled');
+      return;
+    }
+
+    (function tick(){
+      smooth=lerp(smooth,raw,0.08);
+      var sh=spacer?spacer.offsetHeight:1;
+      var p=clamp(smooth/sh,0,1);
+
+      if(progressBar){var tot=document.documentElement.scrollHeight-window.innerHeight;progressBar.style.width=(tot>0?raw/tot*100:0)+'%';}
+      if(cring){rx=lerp(rx,cx,0.1);ry=lerp(ry,cy,0.1);cring.style.transform='translate('+rx+'px,'+ry+'px)';}
+      if(nav){
+        nav.classList.toggle('scrolled',p>0.04);
+        if(p>0.04&&p<0.98){navHidden=true;if(!nav.classList.contains('nav--peek'))nav.classList.add('nav--hidden');}
+        else{navHidden=false;nav.classList.remove('nav--hidden','nav--peek');}
+      }
+
+      /* S1 */
+      [pl0,pl1,pl2].forEach(function(line,i){
+        if(!line)return;
+        var lp=clamp(map(p,R.s1[0],R.s1[1],0,1),0,1);
+        var x=lp<0.4?lerp(LX[i],0,lp/0.4)*LS[i]:lerp(0,88,(lp-0.4)/0.6)*LS[i];
+        var op=clamp(lp/0.22,0,1)*(1-clamp((lp-0.68)/0.32,0,1));
+        line.style.transform='translateX('+x+'vw)';
+        line.style.opacity=op;
+      });
+      if(pSub)pSub.style.opacity=clamp(map(p,0.02,0.08,0,1),0,1)*(1-clamp(map(p,R.s1[1]-0.03,R.s1[1],0,1),0,1));
+      if(pCta)pCta.style.opacity=clamp(map(p,0.04,0.1,0,1),0,1)*(1-clamp(map(p,R.s1[1]-0.03,R.s1[1],0,1),0,1));
+      if(pCue)pCue.style.opacity=clamp(1-map(p,0.02,0.08,0,1),0,1);
+
+      /* S3 colour wash */
+      if(wash)wash.style.opacity=clamp(map(p,R.s3[0],R.s3[0]+0.03,0,1),0,1)*(1-clamp(map(p,R.s3[1]-0.02,R.s3[1],0,1),0,1));
+      /* Hero image fades out as S2 begins */
+      if(s1Bg)s1Bg.style.opacity=1-clamp(map(p,R.s2[0],R.s2[0]+0.06,0,1),0,1);
+
+      /* S2 */
+      if(s2Wrap){
+        var s2lp=clamp(map(p,R.s2[0],R.s2[1],0,1),0,1);
+        var s2op=clamp(map(p,R.s2[0],R.s2[0]+0.02,0,1),0,1)*(1-clamp(map(p,R.s3[0]-0.01,R.s3[0]+0.02,0,1),0,1));
+        s2Wrap.style.opacity=s2op;
+        if(s2Eye)s2Eye.style.opacity=clamp(map(s2lp,0,0.08,0,1),0,1);
+        if(s2Ttl){s2Ttl.style.opacity=clamp(map(s2lp,0.02,0.12,0,1),0,1);s2Ttl.style.transform='translateY('+lerp(20,0,clamp(map(s2lp,0.02,0.12,0,1),0,1))+'px)';}
+        var vh=window.innerHeight;
+        s2Topics.forEach(function(topic,i){
+          if(!topic)return;
+          var start=i*0.14,peak=start+0.08,end=start+0.22;
+          var op,tx;
+          if(s2lp<start){op=0;tx=i%2===0?-60:60;}
+          else if(s2lp<peak){var t=(s2lp-start)/(peak-start);op=t;tx=i%2===0?lerp(-60,0,t):lerp(60,0,t);}
+          else if(s2lp<end){var t2=(s2lp-peak)/(end-peak);op=1-t2;tx=i%2===0?lerp(0,60,t2):lerp(0,-60,t2);}
+          else{op=0;tx=i%2===0?60:-60;}
+          topic.style.transform='translateX('+tx+'px)';
+          topic.style.opacity=clamp(op,0,1);
+          topic.style.top=(vh*0.35)+'px';
+        });
+      }
+
+      /* S3 */
+      if(s3Wrap){
+        var s3lp=clamp(map(p,R.s3[0],R.s3[1],0,1),0,1);
+        var s3op=clamp(map(p,R.s3[0],R.s3[0]+0.02,0,1),0,1)*(1-clamp(map(p,R.s3[1]-0.02,R.s3[1],0,1),0,1));
+        s3Wrap.style.opacity=s3op;
+        if(s3Hdr)s3Hdr.style.opacity=clamp(1-s3lp*1.4,0,1);
+        var vh3=window.innerHeight,iH=vh3*0.18,tt=vh3*(s3Items.length*0.55),bs=s3lp*tt;
+        s3Items.forEach(function(item,i){
+          var yB=vh3*0.5+(i-0.5)*iH+vh3*0.3*(1-s3lp)-bs;
+          var dist=Math.abs(yB-vh3*0.5),cent=clamp(1-dist/(vh3*0.62),0,1),sc=0.82+cent*0.18;
+          item.style.transform='translateY('+yB+'px) scale('+sc+')';
+          item.style.opacity=clamp(cent*1.8,0,1);
+          var meta=s3Metas[i];
+          if(meta)meta.style.transform='translateX('+((cent-0.5)*32)+'px)';
+        });
+      }
+
+      /* S5 — driven by Theatre 2 scroll (see separate engine below) */
+
+      requestAnimationFrame(tick);
+    })();
+  })();
+
+  /* ── Theatre 2: S5 + S6 ── */
+  (function(){
+    var theatre2=document.getElementById('pressTheatre2');
+    var spacer2=document.getElementById('pressSpacer2El');
+    var s5W=document.getElementById('s5Wrap');
+    var s5H=document.getElementById('s5Hdr');
+    var s5R=[0,1,2,3,4,5].map(function(i){return document.getElementById('s5r'+i);});
+    var s5A=document.getElementById('s5Aw');
+    var s6W=document.getElementById('s6Wrap');
+    var s6Ws=[0,1,2,3].map(function(i){return document.getElementById('s6w'+i);});
+    var s6C=document.getElementById('s6Ctas'),s6N=document.getElementById('s6Note');
+    var WS2=[-120,120,-80,80];
+    var R2={s5:[0.00,0.55],s6:[0.55,1.00]};
+
+    function cl(v,a,b){return Math.max(a,Math.min(b,v));}
+    function mp(v,a,b,c,d){return c+(d-c)*((v-a)/(b-a));}
+    function lp(a,b,t){return a+(b-a)*t;}
+
+    function tick2(){
+      if(!spacer2)return;
+      var rect=spacer2.getBoundingClientRect();
+      var p=cl(-rect.top/Math.max(rect.height-window.innerHeight,1),0,1);
+
+      if(s5W){
+        var s5l=cl(mp(p,R2.s5[0],R2.s5[1],0,1),0,1);
+        var s5o=cl(mp(p,R2.s5[0],R2.s5[0]+0.03,0,1),0,1)*(1-cl(mp(p,R2.s6[0]-0.02,R2.s6[0],0,1),0,1));
+        s5W.style.opacity=s5o;
+        if(s5H)s5H.style.opacity=cl(mp(s5l,0,0.12,0,1),0,1);
+        var rT=cl(window.innerHeight*0.34,200,340),rH=cl(window.innerHeight*0.092,58,90);
+        var rD=[0.08,0.14,0.20,0.26,0.32,0.38];
+        s5R.forEach(function(row,i){
+          if(!row)return;
+          var rl=cl(mp(s5l,rD[i],rD[i]+0.2,0,1),0,1);
+          row.style.opacity=rl;
+          row.style.transform='translateX('+lp(-48,0,rl)+'px)';
+          row.style.top=(rT+i*rH)+'px';
+        });
+        if(s5A){var al=cl(mp(s5l,0.7,0.9,0,1),0,1);s5A.style.opacity=al;s5A.style.transform='translateY('+lp(24,0,al)+'px)';}
+      }
+
+      if(s6W){
+        var s6l=cl(mp(p,R2.s6[0],R2.s6[1],0,1),0,1);
+        s6W.style.opacity=cl(mp(p,R2.s6[0],R2.s6[0]+0.03,0,1),0,1);
+        s6Ws.forEach(function(w,i){
+          if(!w)return;
+          var wl=cl(mp(s6l,i*0.07,i*0.07+0.35,0,1),0,1);
+          w.style.transform='translateX('+lp(WS2[i]||0,0,wl)+'px)';
+          w.style.opacity=wl;
+        });
+        if(s6C){var cll=cl(mp(s6l,0.35,0.65,0,1),0,1);s6C.style.transform='translateY('+lp(-28,0,cll)+'px)';s6C.style.opacity=cll;}
+        if(s6N)s6N.style.opacity=cl(mp(s6l,0.55,0.80,0,1),0,1);
+      }
+
+      requestAnimationFrame(tick2);
+    }
+
+    requestAnimationFrame(tick2);
+
+    /* S4 card IntersectionObserver */
+    var s4Cards=document.querySelectorAll('.s4-card');
+    var cObs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});
+    },{threshold:0.12});
+    s4Cards.forEach(function(card,i){
+      card.style.transitionDelay=(i%3)*0.09+'s';
+      cObs.observe(card);
+    });
+  })();
+  </script>
+
+  <!-- Cookie consent -->
+  <div class="cookie-banner cookie-hidden" id="cookieBanner" role="alertdialog" aria-label="Cookie consent">
+    <p class="cookie-text">This site uses cookies to improve your experience. By continuing to browse you agree to our use of cookies.</p>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-btn--decline" id="cookieDecline">Decline</button>
+      <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Accept</button>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var banner=document.getElementById('cookieBanner');
+    if(!banner)return;
+    var consent=localStorage.getItem('ym_cookie_consent');
+    if(!consent){
+      setTimeout(function(){ banner.classList.remove('cookie-hidden'); }, 1200);
+    }
+    document.getElementById('cookieAccept').addEventListener('click',function(){
+      localStorage.setItem('ym_cookie_consent','accepted');
+      banner.classList.add('cookie-hidden');
+    });
+    document.getElementById('cookieDecline').addEventListener('click',function(){
+      localStorage.setItem('ym_cookie_consent','declined');
+      banner.classList.add('cookie-hidden');
+    });
+  })();
+  </script>
+</body>
+</html>

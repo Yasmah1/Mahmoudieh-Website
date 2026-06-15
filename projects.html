@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data:; connect-src 'self' https://formspree.io; font-src 'self' https://fonts.gstatic.com; object-src 'none';">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Mahmoudieh Studio</title>
+  <meta name="description" content="Selected work by Mahmoudieh Studio — hospitality, residences, mixed use, exhibition, retail, office, and travel projects across fifteen countries.">
+  <link rel="icon" href="YM-3.ico" type="image/x-icon">
+  <link rel="canonical" href="https://mahmoudieh.com/projects.html">
+  <meta name="robots" content="index, follow">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mahmoudieh.com/projects.html">
+  <meta property="og:title" content="Projects — Mahmoudieh Studio">
+  <meta property="og:description" content="Selected work by Mahmoudieh Studio — hospitality, residences, mixed use, exhibition, retail, office, and travel projects across fifteen countries.">
+  <meta property="og:image" content="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777720555/7R103896_1_1_ao84xi.jpg">
+  <meta property="og:site_name" content="Mahmoudieh Studio">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projects — Mahmoudieh Studio">
+  <meta name="twitter:description" content="Selected work by Mahmoudieh Studio — hospitality, residences, mixed use, exhibition, retail, office, and travel projects across fifteen countries.">
+  <meta name="twitter:image" content="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777720555/7R103896_1_1_ao84xi.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Nav: charcoal on sand */
+    #nav .nav-logo-img--dark  { display: block; }
+    #nav .nav-logo-img--white { display: none; }
+    #nav .nav-links a { color: var(--text); }
+    #nav.nav--hero-mode .nav-links a { color: rgba(237,232,223,0.9); }
+    #nav.nav--hero-mode .nav-links a:hover { color: #EDE8DF; }
+    #nav.nav--hero-mode .nav-logo-img--dark  { display: none; }
+    #nav.nav--hero-mode .nav-logo-img--white { display: block; }
+    #nav.scrolled .nav-links a { color: var(--text); }
+
+    /* ── Theatre ── */
+    .projects-theatre {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background: var(--dark2);
+    }
+
+    .projects-spacer {
+      height: 220vh;
+      width: 100%;
+      pointer-events: none;
+    }
+
+    /* Background image */
+    .pt-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://res.cloudinary.com/dpqesgjdf/image/upload/v1777720549/Atlantic_Rooms_C1_Session101815_1_aazdec.jpg');
+      background-size: cover;
+      background-position: center;
+      will-change: transform, opacity;
+      z-index: 0;
+    }
+
+    .pt-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(31,28,24,0.85) 0%, rgba(31,28,24,0.3) 60%, rgba(31,28,24,0.1) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Wash — dark to sand */
+    .pt-wash {
+      position: absolute;
+      inset: 0;
+      background: var(--bg);
+      opacity: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* S1: Hero */
+    .pt-eyebrow {
+      position: absolute;
+      top: clamp(80px, 12vh, 120px);
+      left: var(--gutter);
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(237,232,223,0.45);
+      z-index: 5;
+      will-change: opacity;
+    }
+
+    .pt-headline {
+      position: absolute;
+      bottom: clamp(100px, 15vh, 160px);
+      left: 0; right: 0;
+      padding: 0 var(--gutter);
+      z-index: 5;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .pt-line {
+      display: block;
+      font-family: var(--font-heading);
+      font-weight: 400;
+      font-size: clamp(48px, 9vw, 136px);
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+      color: #EDE8DF;
+      white-space: nowrap;
+      will-change: transform, opacity;
+      padding-bottom: 0.18em;
+      overflow: visible;
+    }
+
+    .pt-descriptor {
+      position: absolute;
+      bottom: clamp(64px, 8vh, 96px);
+      left: var(--gutter);
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(237,232,223,0.88);
+      z-index: 5;
+      will-change: opacity;
+    }
+
+    .pt-scroll-cue {
+      position: absolute;
+      bottom: 28px;
+      right: var(--gutter);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .pt-scroll-cue span {
+      font-family: var(--font-body);
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(237,232,223,0.72);
+    }
+
+    .pt-cue-line {
+      width: 1px;
+      height: 40px;
+      background: rgba(237,232,223,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pt-cue-line::after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--accent);
+      animation: cuePulse 2.2s ease-in-out infinite;
+    }
+
+    @keyframes cuePulse {
+      0%   { top: -100%; }
+      50%  { top: 100%; }
+      100% { top: 100%; }
+    }
+
+    /* S2: Positioning statement */
+    .pt-s2 {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      pointer-events: none;
+      background: var(--bg);
+    }
+
+    .pt-s2-text {
+      padding: 0 var(--gutter) clamp(32px, 5vh, 56px);
+    }
+
+    .pt-s2-statement {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      font-size: clamp(36px, 7vw, 108px);
+      letter-spacing: -0.01em;
+      line-height: 0.95;
+      color: var(--text);
+      margin-bottom: clamp(20px, 3vh, 36px);
+      overflow: visible;
+      padding-bottom: 0.12em;
+    }
+
+    .pt-s2-word {
+      display: inline-block;
+      will-change: transform, opacity;
+      margin-right: 0.18em;
+    }
+
+    .pt-s2-sub {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 560px;
+      will-change: opacity;
+    }
+
+    /* ── Normal flow ── */
+    .projects-post {
+      background: var(--bg);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Filter bar */
+    .projects-filter-bar {
+      position: sticky;
+      top: 64px;
+      background: rgba(245, 241, 234, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 0.5px solid var(--warm);
+      z-index: 100;
+      padding: 0 var(--gutter);
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .projects-filter-bar::-webkit-scrollbar { display: none; }
+
+    .proj-filter-tab {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 16px 20px;
+      cursor: pointer;
+      white-space: nowrap;
+      background: none;
+      border: none;
+      border-bottom: 1.5px solid transparent;
+      margin-bottom: -0.5px;
+      transition: color 0.3s, border-color 0.3s;
+      flex-shrink: 0;
+    }
+
+    .proj-filter-tab:hover { color: var(--text); }
+
+    .proj-filter-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* Project grid — 3 columns */
+    .projects-grid {
+      padding: clamp(40px, 6vh, 72px) var(--gutter);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .proj-card-wrap {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.85s var(--ease-out), transform 0.85s var(--ease-out);
+    }
+
+    .proj-card-wrap.visible { opacity: 1; transform: translateY(0); }
+    .proj-card-wrap.hidden { display: none; }
+
+    /* Project card */
+    .proj-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--surface);
+      aspect-ratio: 4/3;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .proj-card--tall { aspect-ratio: 3/4; }
+    .proj-card--wide { aspect-ratio: 16/7; }
+
+    .proj-card-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.9s var(--ease-out);
+      display: block;
+    }
+
+    .proj-card:hover .proj-card-img { transform: scale(1.06); }
+
+    .proj-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(31,28,24,0.92) 0%, rgba(31,28,24,0.60) 45%, rgba(31,28,24,0.20) 72%, transparent 100%);
+      z-index: 1;
+      transition: opacity 0.4s;
+    }
+
+    /* Ember accent line */
+    .proj-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.45s var(--ease-out);
+      z-index: 3;
+    }
+
+    .proj-card:hover::after { transform: scaleX(1); }
+
+    .proj-card-info {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: clamp(16px, 2.5vw, 28px);
+      z-index: 2;
+    }
+
+    .proj-card-sector {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .proj-card-name {
+      display: block;
+      font-family: var(--font-heading);
+      font-weight: 400;
+      font-size: clamp(16px, 2vw, 28px);
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+      color: #EDE8DF;
+      overflow: visible;
+      padding-bottom: 0.06em;
+    }
+
+    .proj-card-location {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(237,232,223,0.88);
+      margin-top: 4px;
+    }
+
+    /* Studio prompt */
+    .projects-cta {
+      padding: clamp(64px, 10vh, 120px) var(--gutter);
+      background: var(--surface);
+      border-top: 0.5px solid var(--warm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .projects-cta-text {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      font-size: clamp(22px, 3.5vw, 52px);
+      letter-spacing: -0.01em;
+      color: var(--text);
+      overflow: visible;
+      padding-bottom: 0.08em;
+    }
+
+    /* ── Modal ── */
+    .proj-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9000;
+      background: var(--bg);
+      clip-path: inset(0 0 100% 0);
+      transition: clip-path 1.1s var(--ease-wipe);
+      overflow-y: auto;
+      pointer-events: none;
+    }
+
+    .proj-modal.open {
+      clip-path: inset(0 0 0% 0);
+      pointer-events: all;
+    }
+
+    .proj-modal-inner {
+      min-height: 100vh;
+      padding-bottom: clamp(80px, 12vh, 140px);
+    }
+
+    .proj-modal-hero {
+      width: 100%;
+      height: 70vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj-modal-hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Awards marquee — pinned to bottom of hero */
+    .proj-modal-awards {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      background: var(--dark2);
+      border-top: 0.5px solid var(--line-dark);
+      overflow: hidden;
+    }
+
+    .proj-modal-awards .marquee-inner {
+      animation-duration: 28s;
+    }
+
+    .proj-modal-awards .marquee-item {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(237, 232, 223, 0.55);
+      padding: 11px 0;
+    }
+
+    .proj-modal-awards .marquee-sep {
+      color: var(--accent);
+      margin: 0 18px;
+    }
+
+    .proj-modal-body {
+      max-width: 860px;
+      padding: clamp(48px, 8vh, 96px) var(--gutter) 0;
+    }
+
+    .proj-modal-sector {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .proj-modal-title {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      font-size: clamp(32px, 6vw, 88px);
+      letter-spacing: -0.01em;
+      line-height: 0.95;
+      color: var(--text);
+      margin-bottom: 8px;
+      overflow: visible;
+      padding-bottom: 0.1em;
+    }
+
+    .proj-modal-location {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: clamp(40px, 6vh, 72px);
+      display: block;
+    }
+
+    .proj-modal-section {
+      margin-bottom: clamp(32px, 5vh, 56px);
+      padding-bottom: clamp(32px, 5vh, 56px);
+      border-bottom: 0.5px solid var(--warm);
+    }
+
+    .proj-modal-section:last-child { border-bottom: none; }
+
+    .proj-modal-section-label {
+      font-family: var(--font-body);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .proj-modal-section-body {
+      font-family: var(--font-body);
+      font-size: clamp(14px, 1.2vw, 17px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .proj-modal-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: clamp(32px, 5vh, 56px);
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: color 0.3s, gap 0.3s;
+    }
+
+    .proj-modal-back:hover {
+      color: var(--accent);
+      gap: 16px;
+    }
+
+    .proj-modal-back svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+      flex-shrink: 0;
+    }
+
+    /* ── Modal two-column layout ── */
+    .proj-modal-columns {
+      display: grid;
+      grid-template-columns: 480px 1fr;
+      gap: 0;
+      min-height: calc(100vh - 70vh);
+    }
+
+    .proj-modal-text-col {
+      padding: clamp(48px, 8vh, 96px) clamp(32px, 4vw, 64px) clamp(48px, 8vh, 96px) var(--gutter);
+      border-right: 0.5px solid var(--warm);
+    }
+
+    .proj-modal-gallery-col {
+      padding: clamp(48px, 8vh, 96px) var(--gutter) clamp(48px, 8vh, 96px) clamp(32px, 4vw, 64px);
+    }
+
+    .proj-modal-gallery-label {
+      font-family: var(--font-body);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    /* Gallery grid */
+    .proj-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .proj-gallery-thumb {
+      position: relative;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--surface);
+    }
+
+    .proj-gallery-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s var(--ease-out);
+    }
+
+    .proj-gallery-thumb:hover img { transform: scale(1.06); }
+
+    /* "View more" overlay on last thumbnail */
+    .proj-gallery-more {
+      position: absolute;
+      inset: 0;
+      background: rgba(31, 28, 24, 0.72);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .proj-gallery-more span {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: #EDE8DF;
+    }
+
+    /* ── Lightbox ── */
+    .proj-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9500;
+      background: var(--dark2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s var(--ease-out);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .proj-lightbox.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .proj-lightbox-img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      display: block;
+      user-select: none;
+    }
+
+    .proj-lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: rgba(237, 232, 223, 0.1);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .proj-lightbox-close:hover { background: var(--accent); }
+
+    .proj-lightbox-close svg {
+      width: 18px;
+      height: 18px;
+      stroke: #EDE8DF;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .proj-lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      background: rgba(237, 232, 223, 0.08);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .proj-lightbox-arrow:hover { background: rgba(237, 232, 223, 0.18); }
+    .proj-lightbox-arrow--prev { left: 24px; }
+    .proj-lightbox-arrow--next { right: 24px; }
+
+    .proj-lightbox-arrow svg {
+      width: 20px;
+      height: 20px;
+      stroke: #EDE8DF;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .proj-lightbox-counter {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      color: rgba(237, 232, 223, 0.45);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1100px) {
+      .proj-modal-columns { grid-template-columns: 1fr; }
+      .proj-modal-text-col { border-right: none; border-bottom: 0.5px solid var(--warm); }
+      .proj-modal-gallery-col { padding-top: clamp(32px, 5vh, 56px); }
+    }
+    @media (max-width: 900px) {
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      .pt-line { white-space: normal; font-size: clamp(36px, 11vw, 72px); }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yasmine Mahmoudieh",
+    "jobTitle": "Global Impact Architect and Creative Director",
+    "url": "https://mahmoudieh.com",
+    "image": "https://www.gspeakers.com/wp-content/uploads/2024/06/Yasmine-Mahmoudieh-Profile-Picture1.webp",
+    "description": "Award-winning architect, interior designer, sustainability consultant, and founder of Mahmoudieh Studio. Speaker at COP28, World Economic Forum Davos, and 100+ international events across 30+ countries.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "71 Fulham Park Gardens",
+      "addressLocality": "London",
+      "postalCode": "SW6 4LB",
+      "addressCountry": "GB"
+    },
+    "email": "design@mahmoudieh.com",
+    "telephone": "+44-7540-136-273",
+    "sameAs": [
+      "https://www.instagram.com/yasmine_mahmoudieh/",
+      "https://uk.linkedin.com/in/yasminemahmoudieh/en",
+      "https://www.facebook.com/people/Yasmine-Mahmoudieh/100057136273118/",
+      "https://x.com/mahmoudieh_arch",
+      "https://www.youtube.com/@yasmine_mahmoudieh"
+    ],
+    "knowsLanguage": ["English", "French", "German", "Spanish", "Italian", "Farsi"],
+    "alumniOf": ["Florence", "Geneva", "San Francisco", "Los Angeles"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Mahmoudieh Studio",
+      "url": "https://mahmoudieh.com"
+    }
+  }
+  </script>
+</head>
+<body class="theatre-active">
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav class="nav nav--hero-mode" id="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Mahmoudieh Studio — Home">
+      <img src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777711967/yasmine-mahmoudieh-logo_2.png" class="nav-logo-img nav-logo-img--dark" alt="Mahmoudieh Studio" height="28">
+      <img src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777712094/yasmine-mahmoudieh-logo-white_oexygq.png" class="nav-logo-img nav-logo-img--white" alt="Mahmoudieh Studio" height="28">
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="about.html">About</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li class="nav-item--has-dropdown">
+        <a href="projects.html" class="active" aria-haspopup="true">Projects</a>
+        <div class="nav-dropdown" role="menu">
+          <div>
+            <span class="nav-dropdown-col-label">Sectors</span>
+            <div class="nav-dropdown-sectors">
+              <a href="projects.html?sector=hospitality" role="menuitem">Hospitality</a>
+              <a href="projects.html?sector=residences" role="menuitem">Residences</a>
+              <a href="projects.html?sector=mixed-use" role="menuitem">Mixed Use</a>
+              <a href="projects.html?sector=exhibition" role="menuitem">Exhibition</a>
+              <a href="projects.html?sector=phygital" role="menuitem">Phygital</a>
+              <a href="projects.html?sector=retail" role="menuitem">Retail</a>
+              <a href="projects.html?sector=office" role="menuitem">Office Spaces</a>
+              <a href="projects.html?sector=travel" role="menuitem">Travel</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-featured">
+            <span class="nav-dropdown-col-label">Featured</span>
+            <div class="nav-dropdown-project">
+              <img class="nav-dropdown-thumb" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715787/Screenshot_2026-03-27_222917_fakzbq.png" alt="Nevai Hotel" loading="lazy">
+              <div>
+                <div class="nav-dropdown-project-name">Nevai Hotel</div>
+                <div class="nav-dropdown-project-loc">Verbier, Switzerland · Hospitality</div>
+              </div>
+            </div>
+            <div class="nav-dropdown-project">
+              <img class="nav-dropdown-thumb" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714949/Screenshot_2026-03-21_214441_oifbpa.png" alt="Augeo" loading="lazy">
+              <div>
+                <div class="nav-dropdown-project-name">Augeo</div>
+                <div class="nav-dropdown-project-loc">Rimini, Italy · Mixed Use</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Start a Project →</a>
+    <button class="nav-hamburger" id="navHam" aria-label="Open navigation" aria-expanded="false" aria-controls="navOverlay">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true" role="dialog">
+    <ul role="list">
+      <li><a href="about.html">About</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-overlay-cta">Start a Project →</a>
+  </div>
+
+  <!-- ============================================================
+       THEATRE — 400vh
+  ============================================================ -->
+  <div class="projects-theatre" id="projectsTheatre">
+
+    <div class="pt-bg" id="ptBg" aria-hidden="true"></div>
+    <div class="pt-overlay" aria-hidden="true"></div>
+    <div class="pt-wash" id="ptWash" aria-hidden="true"></div>
+
+    <!-- S1: Hero -->
+    <span class="pt-eyebrow" id="ptEye">Selected Work · 15+ Countries</span>
+
+    <div class="pt-headline" id="ptHl" aria-label="Spaces that earn their place.">
+      <span class="pt-line" id="ptL0">Spaces that</span>
+      <span class="pt-line" id="ptL1">earn their place.</span>
+    </div>
+
+    <span class="pt-descriptor" id="ptDesc">Hospitality · Residences · Exhibition · Travel · Retail · Office</span>
+
+    <div class="pt-scroll-cue" id="ptCue" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="pt-cue-line"></div>
+    </div>
+
+    <!-- S2: Statement + marquee -->
+    <div class="pt-s2" id="ptS2" style="opacity:0;">
+      <div class="pt-s2-text" style="padding: 0 var(--gutter) clamp(28px,4vh,48px);">
+        <h2 class="pt-s2-statement" aria-label="Every project begins with a question.">
+          <span class="pt-s2-word" id="s2w0">Every</span>
+          <span class="pt-s2-word" id="s2w1">project</span>
+          <span class="pt-s2-word" id="s2w2">begins</span>
+          <br aria-hidden="true">
+          <span class="pt-s2-word" id="s2w3">with a</span>
+          <span class="pt-s2-word" id="s2w4">question.</span>
+        </h2>
+        <p class="pt-s2-sub" id="s2Sub">Architecture, interiors, and experience design — from alpine hospitality to aviation, across fifteen countries.</p>
+      </div>
+      <div id="ptMarquee" aria-hidden="true">
+        <div class="marquee marquee--dark" style="border:none;">
+          <div class="marquee-inner">
+            <span class="marquee-item">Kempinski Berlin<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Nevai Hotel · Verbier<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Strandhotel Atlantic<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Augeo · Rimini<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">5+ Sensotel · Saas-Fee<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Villa Meeresstrand<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Flowniversum<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Kempinski Berlin<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Nevai Hotel · Verbier<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Strandhotel Atlantic<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Augeo · Rimini<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">5+ Sensotel · Saas-Fee<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Villa Meeresstrand<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Flowniversum<span class="marquee-sep">·</span></span>
+          </div>
+        </div>
+        <div class="marquee marquee--dark" style="border:none;border-top:0.5px solid rgba(255,255,255,0.06);">
+          <div class="marquee-inner marquee-inner--reverse">
+            <span class="marquee-item">Hospitality<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Residences<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Mixed Use<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Exhibition<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Phygital<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Retail<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Office Spaces<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Travel<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Hospitality<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Residences<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Mixed Use<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Exhibition<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Phygital<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Retail<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Office Spaces<span class="marquee-sep">·</span></span>
+            <span class="marquee-item">Travel<span class="marquee-sep">·</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /theatre -->
+
+  <div class="projects-spacer" id="projectsSpacer" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       NORMAL FLOW — Filter + Grid
+  ============================================================ -->
+  <div class="projects-post">
+
+    <!-- Sticky filter bar -->
+    <div class="projects-filter-bar" id="filterBar" role="tablist" aria-label="Filter by sector">
+      <button class="proj-filter-tab active" data-sector="all" role="tab" aria-selected="true">All</button>
+      <button class="proj-filter-tab" data-sector="hospitality" role="tab" aria-selected="false">Hospitality</button>
+      <button class="proj-filter-tab" data-sector="residences" role="tab" aria-selected="false">Residences</button>
+      <button class="proj-filter-tab" data-sector="mixed-use" role="tab" aria-selected="false">Mixed Use</button>
+      <button class="proj-filter-tab" data-sector="exhibition" role="tab" aria-selected="false">Exhibition</button>
+      <button class="proj-filter-tab" data-sector="phygital" role="tab" aria-selected="false">Phygital</button>
+      <button class="proj-filter-tab" data-sector="retail" role="tab" aria-selected="false">Retail</button>
+      <button class="proj-filter-tab" data-sector="office" role="tab" aria-selected="false">Office Spaces</button>
+      <button class="proj-filter-tab" data-sector="travel" role="tab" aria-selected="false">Travel</button>
+    </div>
+
+    <!-- Project grid — 3 column, strongest projects first -->
+    <div class="projects-grid" id="projectsGrid">
+
+      <!-- Row 1: Hero projects -->
+      <div class="proj-card-wrap" data-sector="hospitality">
+        <div class="proj-card" data-modal="kempinski-berlin">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714822/Screenshot_2026-03-20_224611_-_Copy_l2ooio.png" alt="Kempinski Hotel Berlin" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality</span><span class="proj-card-name">Kempinski Hotel Berlin</span><span class="proj-card-location">Berlin, Germany</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="hospitality">
+        <div class="proj-card" data-modal="strandhotel">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777720555/7R103896_1_1_ao84xi.jpg" alt="Strandhotel Atlantic" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality</span><span class="proj-card-name">Strandhotel Atlantic</span><span class="proj-card-location">Baltic Sea, Germany</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="hospitality">
+        <div class="proj-card" data-modal="nevai">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715787/Screenshot_2026-03-27_222917_fakzbq.png" alt="Nevai Hotel" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality</span><span class="proj-card-name">Nevai Hotel</span><span class="proj-card-location">Verbier, Switzerland</span></div>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="proj-card-wrap" data-sector="hospitality residences">
+        <div class="proj-card" data-modal="villa-meeresstrand">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777719386/Atlantic_Rooms_C1_Session102876_1_otrsdr.jpg" alt="Villa Meeresstrand" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality · Residences</span><span class="proj-card-name">Villa Meeresstrand</span><span class="proj-card-location">Baltic Sea, Germany</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="hospitality exhibition">
+        <div class="proj-card" data-modal="sensotel">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715246/Screenshot_2026-03-20_204939_dmezae.png" alt="5+ Sensotel" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality · Exhibition</span><span class="proj-card-name">5+ Sensotel</span><span class="proj-card-location">Saas-Fee, Switzerland</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="hospitality exhibition">
+        <div class="proj-card" data-modal="sleep-eat">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715254/Screenshot_2026-03-20_223012_efpyga.png" alt="Sleep + Eat UK" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality · Exhibition</span><span class="proj-card-name">Sleep + Eat UK</span><span class="proj-card-location">London, United Kingdom</span></div>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="proj-card-wrap" data-sector="hospitality">
+        <div class="proj-card" data-modal="my-kidsy">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715563/20200303605225832_w1mbql.jpg" alt="My Kidsy Playground" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality</span><span class="proj-card-name">My Kidsy Playground</span><span class="proj-card-location">Global</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="phygital">
+        <div class="proj-card" data-modal="flowniversum">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715060/Screenshot_2026-03-13_182739_qbbvw6.png" alt="Flowniversum" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Phygital</span><span class="proj-card-name">Flowniversum</span><span class="proj-card-location">Global</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="hospitality mixed-use">
+        <div class="proj-card" data-modal="augeo">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714949/Screenshot_2026-03-21_214441_oifbpa.png" alt="Augeo" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality · Mixed Use</span><span class="proj-card-name">Augeo</span><span class="proj-card-location">Rimini, Italy</span></div>
+        </div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="proj-card-wrap" data-sector="hospitality">
+        <div class="proj-card" data-modal="aparthotel-adler">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714740/201901082097614906_y5mjrg.jpg" alt="Aparthotel Adler" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality</span><span class="proj-card-name">Aparthotel Adler</span><span class="proj-card-location">Germany</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="hospitality travel">
+        <div class="proj-card" data-modal="flyotel">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714769/201901081790175248_zzyjuo.jpg" alt="Flyotel" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality · Travel</span><span class="proj-card-name">Flyotel</span><span class="proj-card-location">Global</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="hospitality">
+        <div class="proj-card" data-modal="haus-rheinsberg">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714816/Screenshot_2026-03-20_211634_-_Copy_p3obzd.png" alt="Haus Rheinsberg" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality</span><span class="proj-card-name">Haus Rheinsberg</span><span class="proj-card-location">Germany</span></div>
+        </div>
+      </div>
+
+      <!-- Row 5 -->
+      <div class="proj-card-wrap" data-sector="hospitality travel">
+        <div class="proj-card" data-modal="hotel-concorde">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714752/201901081297887444_okrxhm.jpg" alt="Hotel Concorde Lafayette" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality · Travel</span><span class="proj-card-name">Hotel Concorde Lafayette</span><span class="proj-card-location">Paris, France</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="hospitality">
+        <div class="proj-card" data-modal="intercontinental-konigsallee">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714746/2019010886194460_rn2ft8.jpg" alt="Intercontinental Konigsallee" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality</span><span class="proj-card-name">Intercontinental Konigsallee</span><span class="proj-card-location">Düsseldorf, Germany</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="hospitality">
+        <div class="proj-card" data-modal="kempinski-bad-saarow">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714748/201901081195996438_imulhf.jpg" alt="Kempinski Hotel Bad Saarow" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality</span><span class="proj-card-name">Kempinski Hotel Bad Saarow</span><span class="proj-card-location">Bad Saarow, Germany</span></div>
+        </div>
+      </div>
+
+      <!-- Row 6 -->
+      <div class="proj-card-wrap" data-sector="hospitality">
+        <div class="proj-card" data-modal="radisson-berlin">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714760/20190108423559967_fe8mbu.jpg" alt="Radisson SAS Berlin" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality</span><span class="proj-card-name">Radisson SAS Hotel</span><span class="proj-card-location">Berlin, Germany</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="hospitality">
+        <div class="proj-card" data-modal="radisson-copenhagen">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714756/201901081654523879_nvu4we.jpg" alt="Radisson SAS Copenhagen" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality</span><span class="proj-card-name">Radisson SAS Hotel</span><span class="proj-card-location">Copenhagen, Denmark</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="hospitality">
+        <div class="proj-card" data-modal="weston-hall">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714737/201901081709962828_rh3jj1.jpg" alt="Weston Hall" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality</span><span class="proj-card-name">Weston Hall</span><span class="proj-card-location">United Kingdom</span></div>
+        </div>
+      </div>
+
+      <!-- Row 7 -->
+      <div class="proj-card-wrap" data-sector="hospitality mixed-use retail office">
+        <div class="proj-card" data-modal="nikolskie">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714942/20190108533383617_dj8csd.jpg" alt="Nikolskie Ryady" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality · Mixed Use · Retail · Office</span><span class="proj-card-name">Nikolskie Ryady</span><span class="proj-card-location">Moscow, Russia</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="hospitality mixed-use">
+        <div class="proj-card" data-modal="bodrum">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714939/20190201331801784_koo7nz.jpg" alt="Bodrum" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality · Mixed Use</span><span class="proj-card-name">Bodrum</span><span class="proj-card-location">Bodrum, Turkey</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="hospitality exhibition">
+        <div class="proj-card" data-modal="sobanski">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715498/201901081041915933_sjppbt.jpg" alt="Sobanski Club" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Hospitality · Exhibition</span><span class="proj-card-name">Sobanski Club</span><span class="proj-card-location">Poland</span></div>
+        </div>
+      </div>
+
+      <!-- Row 8 — Residences + Mixed Use -->
+      <div class="proj-card-wrap" data-sector="residences">
+        <div class="proj-card" data-modal="loft-london">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714907/20190108461271219_dk12i0.jpg" alt="Loft London" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Residences</span><span class="proj-card-name">Loft London</span><span class="proj-card-location">London, United Kingdom</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="mixed-use retail office">
+        <div class="proj-card" data-modal="barbu-vacarescu">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714948/201901221697684810_e0n3qe.jpg" alt="Barbu Vacarescu" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Mixed Use · Retail · Office</span><span class="proj-card-name">Barbu Vacarescu</span><span class="proj-card-location">Bucharest, Romania</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="mixed-use">
+        <div class="proj-card" data-modal="kunsthalle">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714945/201901222018765478_auq6if.jpg" alt="Kunsthalle" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Mixed Use</span><span class="proj-card-name">Kunsthalle</span><span class="proj-card-location">Germany</span></div>
+        </div>
+      </div>
+
+      <!-- Row 9 -->
+      <div class="proj-card-wrap" data-sector="mixed-use retail">
+        <div class="proj-card" data-modal="millenium">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714937/201901081939741617_nf8iy2.jpg" alt="Millenium Center" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Mixed Use · Retail</span><span class="proj-card-name">Millenium Center</span><span class="proj-card-location">Romania</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="mixed-use">
+        <div class="proj-card" data-modal="moscow-ocean">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715547/201901222036063964_t7b5zm.jpg" alt="Moscow Ocean Park" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Mixed Use</span><span class="proj-card-name">Moscow Ocean Park</span><span class="proj-card-location">Moscow, Russia</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="retail">
+        <div class="proj-card" data-modal="chinese-pharmacy">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715334/201901087959241_cbxlmc.jpg" alt="Chinese Pharmacy" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Retail</span><span class="proj-card-name">Chinese Pharmacy</span><span class="proj-card-location">Germany</span></div>
+        </div>
+      </div>
+
+      <!-- Row 10 — Office -->
+      <div class="proj-card-wrap" data-sector="office">
+        <div class="proj-card" data-modal="aon">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715430/201901081254136777_u16ygm.jpg" alt="Aon" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Office Spaces</span><span class="proj-card-name">Aon</span><span class="proj-card-location">Germany</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="office">
+        <div class="proj-card" data-modal="office-garbe">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715442/20190108474458789_b45itu.jpg" alt="Office Garbe" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Office Spaces</span><span class="proj-card-name">Office Garbe</span><span class="proj-card-location">Germany</span></div>
+        </div>
+      </div>
+
+      <!-- Row 11 — Exhibition -->
+      <div class="proj-card-wrap" data-sector="exhibition">
+        <div class="proj-card" data-modal="aedes">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715208/20190108590697713_vwj26c.jpg" alt="Aedes" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Exhibition</span><span class="proj-card-name">Aedes</span><span class="proj-card-location">Berlin, Germany</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="exhibition">
+        <div class="proj-card" data-modal="berlinale">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715228/20190108360668145_hlt8qo.jpg" alt="Berlinale Oréal VIP Club" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Exhibition</span><span class="proj-card-name">Berlinale Oréal VIP Club</span><span class="proj-card-location">Berlin, Germany</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="exhibition">
+        <div class="proj-card" data-modal="carpe-diem">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715215/20190108259963808_ggzca5.jpg" alt="Carpe Diem" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Exhibition</span><span class="proj-card-name">Carpe Diem</span><span class="proj-card-location">Germany</span></div>
+        </div>
+      </div>
+
+      <!-- Row 12 — Exhibition continued -->
+      <div class="proj-card-wrap" data-sector="exhibition">
+        <div class="proj-card" data-modal="palace-concept">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715209/20190108690710417_oslzby.jpg" alt="Palace Concept" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Exhibition</span><span class="proj-card-name">Palace Concept</span><span class="proj-card-location">Germany</span></div>
+        </div>
+      </div>
+
+      <!-- Row 13 — Phygital -->
+      <div class="proj-card-wrap" data-sector="phygital">
+        <div class="proj-card" data-modal="eco-surge">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777715015/WhatsApp_Image_2026-03-10_at_7.56.06_PM_1_fz7ufi.jpg" alt="EcoSurge" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Phygital</span><span class="proj-card-name">EcoSurge</span><span class="proj-card-location">Global</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="phygital">
+        <div class="proj-card" data-modal="cyber-dreams">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714999/WhatsApp_Image_2026-04-19_at_5.27.07_PM_cgxywl.jpg" alt="Cyber Dreams" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Phygital</span><span class="proj-card-name">Cyber Dreams</span><span class="proj-card-location">Global</span></div>
+        </div>
+      </div>
+      <div class="proj-card-wrap" data-sector="phygital">
+        <div class="proj-card" data-modal="horchler">
+          <img class="proj-card-img" src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777714997/20190108340860141_ip3cyt.jpg" alt="Horchler AG Exhibition Stand" loading="lazy">
+          <div class="proj-card-overlay"></div>
+          <div class="proj-card-info"><span class="proj-card-sector">Phygital</span><span class="proj-card-name">Horchler AG Exhibition Stand</span><span class="proj-card-location">Germany</span></div>
+        </div>
+      </div>
+
+    </div><!-- /projects-grid -->
+
+
+    <!-- Studio prompt -->
+    <div class="projects-cta reveal">
+      <h2 class="projects-cta-text">Working on something<br>that doesn't fit a category?</h2>
+      <a href="contact.html" class="btn btn-filled">Start a Project →</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer-top">
+        <div><span class="footer-logo"><img src="https://res.cloudinary.com/dpqesgjdf/image/upload/v1777712094/yasmine-mahmoudieh-logo-white_oexygq.png" class="footer-logo-img" alt="Mahmoudieh Studio" height="24"></span><p class="footer-tagline">Brand Storytelling · Regenerative Design · Multisensory Experience</p></div>
+        <div><span class="footer-col-label">Navigation</span><nav class="footer-nav" aria-label="Footer navigation"><a href="about.html">About</a><a href="insights.html">Insights</a><a href="projects.html">Projects</a><a href="press.html">Press</a></nav></div>
+        <div><span class="footer-col-label">Connect</span><nav class="footer-nav" aria-label="Footer links"><a href="shop.html">Shop</a><a href="contact.html">Contact</a><a href="https://impactdesignnow.com" target="_blank" rel="noopener noreferrer">Impact Design Now</a></nav></div>
+      </div>
+      <div class="footer-rule" aria-hidden="true"></div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© Mahmoudieh Studio · London · All rights reserved</span>
+        <div class="footer-socials"><a href="https://www.instagram.com/yasmine_mahmoudieh/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a><a href="https://uk.linkedin.com/in/yasminemahmoudieh/en" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="https://www.facebook.com/people/Yasmine-Mahmoudieh/100057136273118/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://x.com/mahmoudieh_arch" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.731-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.youtube.com/@yasmine_mahmoudieh" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></div>
+      </div>
+    </footer>
+
+  </div><!-- /projects-post -->
+
+  <!-- Lightbox -->
+  <div class="proj-lightbox" id="projLightbox" aria-modal="true" role="dialog" aria-label="Image viewer">
+    <button class="proj-lightbox-close" id="lbClose" aria-label="Close image"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <button class="proj-lightbox-arrow proj-lightbox-arrow--prev" id="lbPrev" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <img class="proj-lightbox-img" id="lbImg" src="" alt="">
+    <button class="proj-lightbox-arrow proj-lightbox-arrow--next" id="lbNext" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <span class="proj-lightbox-counter" id="lbCounter"></span>
+  </div>
+
+  <!-- ============================================================
+       MODAL
+  ============================================================ -->
+  <div class="proj-modal" id="projModal" aria-modal="true" role="dialog" aria-label="Project detail">
+    <div class="proj-modal-inner" id="modalInner">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    'use strict';
+    var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function lerp(a,b,t){return a+(b-a)*t;}
+    function clamp(v,lo,hi){return Math.max(lo,Math.min(hi,v));}
+    function map(v,i0,i1,o0,o1){return o0+clamp((v-i0)/(i1-i0),0,1)*(o1-o0);}
+
+    /* ── Scroll ── */
+    var raw=0,smooth=0;
+    window.addEventListener('scroll',function(){raw=window.scrollY;},{passive:true});
+
+    var progressBar=document.getElementById('scrollProgress');
+    var nav=document.getElementById('nav');
+    var spacer=document.getElementById('projectsSpacer');
+    var ptWash=document.getElementById('ptWash');
+
+    /* S1 */
+    var ptL0=document.getElementById('ptL0'),ptL1=document.getElementById('ptL1');
+    var ptEye=document.getElementById('ptEye'),ptDesc=document.getElementById('ptDesc'),ptCue=document.getElementById('ptCue');
+
+    /* S2 */
+
+    /* S2 */
+    var ptS2=document.getElementById('ptS2');
+    var s2Words=[0,1,2,3,4].map(function(i){return document.getElementById('s2w'+i);});
+    var s2Sub=document.getElementById('s2Sub');
+
+    var R={
+      s1: [0.00,0.22],
+      s2: [0.20,0.40]
+    };
+
+    var LS=[1.0,0.82],LX=[-100,-82];
+    var WS=[-140,-90,80,-110,70];
+
+    /* Nav */
+    var navHidden=false,navPeekTimer=null;
+    function showNav(){if(nav){nav.classList.remove('nav--hidden');nav.classList.add('nav--peek');}}
+    function hideNav(){if(nav){nav.classList.remove('nav--peek');nav.classList.add('nav--hidden');}}
+    document.addEventListener('mousemove',function(e){
+      if(e.clientY<80){showNav();clearTimeout(navPeekTimer);navPeekTimer=setTimeout(function(){if(navHidden)hideNav();},1800);}
+    });
+
+    /* Cursor */
+    var cursor=document.getElementById('cursor'),cring=document.getElementById('cursorRing');
+    var cx=0,cy=0,rx=0,ry=0;
+    if(cursor&&cring){
+      document.addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;cursor.style.transform='translate('+cx+'px,'+cy+'px)';});
+      document.querySelectorAll('a,button,.proj-card').forEach(function(el){
+        el.addEventListener('mouseenter',function(){cring.classList.add('is-hovering');});
+        el.addEventListener('mouseleave',function(){cring.classList.remove('is-hovering');});
+      });
+    }
+
+    /* Hamburger */
+    var navHam=document.getElementById('navHam'),navOverlay=document.getElementById('navOverlay');
+    if(navHam&&navOverlay){
+      navHam.addEventListener('click',function(){
+        var open=navHam.classList.toggle('open');
+        navOverlay.classList.toggle('open',open);
+        navOverlay.setAttribute('aria-hidden',!open);
+        navHam.setAttribute('aria-expanded',open);
+        document.body.style.overflow=open?'hidden':'';
+      });
+      navOverlay.querySelectorAll('a').forEach(function(l){
+        l.addEventListener('click',function(){
+          navHam.classList.remove('open');navOverlay.classList.remove('open');
+          navOverlay.setAttribute('aria-hidden','true');navHam.setAttribute('aria-expanded','false');
+          document.body.style.overflow='';
+        });
+      });
+    }
+
+    /* Marquee pause */
+    document.querySelectorAll('.marquee').forEach(function(m){
+      m.addEventListener('mouseenter',function(){m.classList.add('is-paused');});
+      m.addEventListener('mouseleave',function(){m.classList.remove('is-paused');});
+    });
+
+    /* rAF */
+    (function tick(){
+      smooth=lerp(smooth,raw,0.08);
+      var sh=spacer?spacer.offsetHeight:1;
+      var p=clamp(smooth/sh,0,1);
+
+      if(progressBar){var tot=document.documentElement.scrollHeight-window.innerHeight;progressBar.style.width=(tot>0?raw/tot*100:0)+'%';}
+      if(cring){rx=lerp(rx,cx,0.1);ry=lerp(ry,cy,0.1);cring.style.transform='translate('+rx+'px,'+ry+'px)';}
+
+      if(nav){
+        nav.classList.toggle('scrolled',p>0.04);
+        var washP=clamp(map(p,R.s2[0],R.s2[0]+0.06,0,1),0,1);
+        nav.classList.toggle('nav--hero-mode',washP<0.5);
+        if(p>0.04&&p<0.98){navHidden=true;if(!nav.classList.contains('nav--peek'))nav.classList.add('nav--hidden');}
+        else{navHidden=false;nav.classList.remove('nav--hidden','nav--peek');}
+      }
+
+      /* Wash */
+      if(ptWash)ptWash.style.opacity=clamp(map(p,R.s2[0],R.s2[0]+0.06,0,1),0,1);
+
+      /* S1 */
+      if(!reduced){
+        [ptL0,ptL1].forEach(function(line,i){
+          if(!line)return;
+          var lp=clamp(map(p,R.s1[0],R.s1[1],0,1),0,1);
+          var x=lp<0.4?lerp(LX[i],0,lp/0.4)*LS[i]:lerp(0,88,(lp-0.4)/0.6)*LS[i];
+          var op=clamp(lp/0.22,0,1)*(1-clamp((lp-0.68)/0.32,0,1));
+          line.style.transform='translateX('+x+'vw)';
+          line.style.opacity=op;
+        });
+        if(ptEye)ptEye.style.opacity=clamp(map(p,0.02,0.08,0,1),0,1)*(1-clamp(map(p,R.s1[1]-0.03,R.s1[1],0,1),0,1));
+        if(ptDesc)ptDesc.style.opacity=clamp(map(p,0.04,0.1,0,1),0,1)*(1-clamp(map(p,R.s1[1]-0.03,R.s1[1],0,1),0,1));
+        if(ptCue)ptCue.style.opacity=clamp(1-map(p,0.02,0.08,0,1),0,1);
+
+        /* S2 */
+        if(ptS2){
+          var s2in=clamp(map(p,R.s2[0],R.s2[0]+0.03,0,1),0,1);
+          var s2out=1-clamp(map(p,R.s2[1]-0.02,R.s2[1],0,1),0,1);
+          ptS2.style.opacity=Math.min(s2in,s2out);
+          var s2lp=clamp(map(p,R.s2[0],R.s2[1],0,1),0,1);
+          s2Words.forEach(function(w,i){
+            if(!w)return;
+            var wlp=clamp(map(s2lp,i*0.08,i*0.08+0.35,0,1),0,1);
+            var drift=lerp(WS[i]||0,0,wlp)+(s2lp-0.5)*16;
+            w.style.transform='translateX('+drift+'px)';
+            w.style.opacity=wlp;
+          });
+          if(s2Sub)s2Sub.style.opacity=clamp(map(s2lp,0.4,0.7,0,1),0,1);
+        }
+      }
+
+      requestAnimationFrame(tick);
+    })();
+
+    /* ── Query param ── */
+    var sectorParam=new URLSearchParams(window.location.search).get('sector');
+    if(sectorParam){
+      var t=document.querySelector('.proj-filter-tab[data-sector="'+sectorParam+'"]');
+      if(t) setTimeout(function(){t.click();},300);
+    }
+
+    /* ── Filter ── */
+    var filterTabs=document.querySelectorAll('.proj-filter-tab');
+    var allWraps=document.querySelectorAll('.proj-card-wrap');
+
+    filterTabs.forEach(function(tab){
+      tab.addEventListener('click',function(){
+        filterTabs.forEach(function(t){t.classList.remove('active');t.setAttribute('aria-selected','false');});
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected','true');
+        var sec=tab.dataset.sector;
+        var url=new URL(window.location.href);
+        if(sec==='all'){url.searchParams.delete('sector');}
+        else{url.searchParams.set('sector',sec);}
+        window.history.replaceState({},'',url.toString());
+
+        allWraps.forEach(function(wrap){
+          if(sec==='all'||wrap.dataset.sector.split(' ').indexOf(sec)!==-1){
+            wrap.classList.remove('hidden');
+          } else {
+            wrap.classList.add('hidden');
+          }
+        });
+
+        /* Strip visible so cards replay their entrance animation */
+        setTimeout(function(){
+          document.querySelectorAll('.proj-card-wrap:not(.hidden)').forEach(function(w){
+            w.classList.remove('visible');
+            cardObs.observe(w);
+          });
+        },50);
+      });
+    });
+
+    /* ── Card reveals ── */
+    var cardObs=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var idx=Array.from(allWraps).indexOf(entry.target);
+          setTimeout(function(){entry.target.classList.add('visible');},Math.min((idx%6)*60,360));
+          cardObs.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.06,rootMargin:'0px 0px -24px 0px'});
+
+    var revObs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target);}});
+    },{threshold:0.1});
+
+    if(reduced){
+      allWraps.forEach(function(w){w.classList.add('visible');});
+      document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
+    } else {
+      allWraps.forEach(function(w){cardObs.observe(w);});
+      document.querySelectorAll('.reveal').forEach(function(el){revObs.observe(el);});
+    }
+
+    /* ── Modal data ── */
+    var CDN='https://res.cloudinary.com/dpqesgjdf/image/upload/';
+    var modalData={
+      "aparthotel-adler":{name:"Aparthotel Adler",sector:"Hospitality",location:"Germany",img:CDN+"v1777714740/201901082097614906_y5mjrg.jpg",images:[CDN+"v1777714739/20190108695697476_tryyci.jpg",CDN+"v1777714738/20190108292231579_dztf8q.jpg",CDN+"v1777714741/2019010825479589_ozqqff.jpg",CDN+"v1777714741/201901081004889252_aq9i7k.jpg",CDN+"v1777714740/201901081623071711_bmgwje.jpg",CDN+"v1777714738/20190108842398868_epgysj.jpg"],brief:"Contemporary design meets a picturesque alpine setting in this 4-star hotel.",concept:"Premium materials including Perspex and Corian are combined with ambient lighting and clean horizontal lines that deliberately contrast with the dramatic mountain landscape beyond the windows. A family-friendly children’s play area, built from safe organic foam, completes the guest experience.",materials:"Perspex · Corian · Organic landscape foam · Ambient lighting systems",moments:"The horizontal lines of the interior create a deliberate visual counterpoint to the majestic vertical scale of the mountains outside — a spatial tension that makes the setting feel even more extraordinary."},
+      "flyotel":{name:"Flyotel",sector:"Hospitality · Travel",location:"Global",img:CDN+"v1777714769/201901081790175248_zzyjuo.jpg",images:[CDN+"v1777714768/201901081450203666_ufjop5.jpg",CDN+"v1777714767/20190108722515969_rtm42g.jpg",CDN+"v1777714767/20190108615650012_lvf5ln.jpg",CDN+"v1777714766/201901081826771032_fuknc0.jpg",CDN+"v1777714765/201901081092051715_ye0vi0.jpg",CDN+"v1777714764/201901081355590543_stfhz1.jpg",CDN+"v1777714764/20190108868435084_lwlooo.jpg",CDN+"v1777714763/201901081861576827_kqy6j6.jpg"],brief:"Conceived around the theme ‘Fascination with Flying’, this 350-room 5-star hotel draws its form from a bird spreading its wings in preparation for flight.",concept:"The connection tunnel evokes the anticipation of travel, while the entrance engages the senses through Arabic fragrances, music, and regional art installations. A sloped entry leads guests into a lobby of sculpted seating inspired by the desert dunes of Arabia, before opening onto world-class bars, six fine dining restaurants, a spa, and a convention centre.",materials:"Sculpted soft seating · Regional art installations · Ambient fragrance systems · Desert-inspired material palette",moments:"The moment of entrance — where Arabian fragrances, music, and art converge — signals to the guest that what follows will be unlike any hotel they have experienced before."},
+      "haus-rheinsberg":{name:"Haus Rheinsberg Hotel Am See",sector:"Hospitality",location:"Germany",img:CDN+"v1777714816/Screenshot_2026-03-20_211634_-_Copy_p3obzd.png",images:[CDN+"v1777714816/Screenshot_2026-03-20_211641_ytkl1w.png",CDN+"v1777714816/Screenshot_2026-03-20_211652_-_Copy_n3ndv6.png",CDN+"v1777714815/Screenshot_2026-03-20_211659_rcnvig.png",CDN+"v1777714814/Screenshot_2026-03-20_211712_-_Copy_qwcfec.png",CDN+"v1777714813/Screenshot_2026-03-20_211724_-_Copy_rdjn7r.png",CDN+"v1777714813/Screenshot_2026-03-20_211737_hayxbg.png",CDN+"v1777714812/Screenshot_2026-03-20_211744_ns8byn.png"],awards:"Best Interior Design — CoreDesign Awards · European Hotel Design Awards",brief:"The world’s first hotel purpose-built around the needs of disabled guests, without any suggestion of limitation or helplessness.",concept:"Across 110 rooms and a full range of amenities — restaurant, fitness centre, swimming pool, sauna, bowling alley — curvilinear forms, indirect lighting, and clear spatial orientation support visually impaired guests, while a warm Mediterranean colour palette ensures the atmosphere feels uplifting throughout.",materials:"Curvilinear design elements · Indirect lighting systems · Mediterranean colour palette · Accessible material finishes",moments:"The design proves that the highest standards of inclusive design and genuine luxury are not in tension — they are the same intention, achieved here for the first time at hotel scale."},
+      "hotel-concorde":{name:"Hotel Concorde Lafayette",sector:"Hospitality · Travel",location:"Paris, France",img:CDN+"v1777714752/201901081297887444_okrxhm.jpg",images:[CDN+"v1777714752/201901081297887444_okrxhm.jpg",CDN+"v1777714752/20190108965071704_i2xn4m.jpg",CDN+"v1777714751/201901081323597209_wc4x28.jpg",CDN+"v1777714751/2019010820829672_aha6v2.jpg",CDN+"v1777714751/201901081114957257_vmains.jpg",CDN+"v1777714749/201901081565210438_jioyaq.jpg"],brief:"One of Paris’s most architecturally distinctive hotels. At 137 metres and 33 floors, the Concorde La Fayette was France’s tallest hotel — an elliptical tower integrated directly into the Palais des Congrès at Porte Maillot.",concept:"With 950 guest rooms and suites and positioned at the intersection of the Champs-Élysées axis and La Défense, the property serves an international clientele of business travellers and cultural visitors. The studio’s intervention addressed the interior identity of this landmark at scale.",materials:"Premium upholstery · Contemporary finishes · Integrated lighting · Custom joinery throughout",moments:"Working within a building of this civic and architectural significance demanded a response that could match its scale — an interior identity strong enough to hold across 950 rooms."},
+      "intercontinental-konigsallee":{name:"Intercontinental Konigsallee",sector:"Hospitality",location:"Düsseldorf, Germany",img:CDN+"v1777714746/2019010886194460_rn2ft8.jpg",images:[CDN+"v1777714745/201901081436145124_o15vmo.jpg",CDN+"v1777714745/201901081901917507_xxjoav.jpg",CDN+"v1777714744/201901081094713108_igwd71.jpg",CDN+"v1777714744/201901081650400176_rqkwwx.jpg",CDN+"v1777714743/20190108320251488_yseaxx.jpg",CDN+"v1777714742/201901081398793121_qp0ug4.jpg"],brief:"The InterContinental Düsseldorf occupies Königsallee 59 — the heart of Düsseldorf’s premier luxury boulevard, alongside the world’s leading fashion houses.",concept:"Across 287 rooms and suites, a 40-metre-high atrium of stone and glass forms the spatial anchor of the property. The studio used high-quality natural materials and a warm contemporary language to position this hotel as the definitive address in the city — recognised as Germany’s Leading Business Hotel.",materials:"Natural stone · Glass atrium · Premium timber · High-quality contemporary finishes",moments:"Standing on one of Europe’s most design-literate streets, the property had to hold its own against extraordinary context — the atrium achieves this through sheer spatial authority."},
+      "kempinski-berlin":{name:"Kempinski Berchtesgaden",sector:"Hospitality",location:"Berchtesgaden, Germany",img:CDN+"v1777714822/Screenshot_2026-03-20_224611_-_Copy_l2ooio.png",images:[CDN+"v1777714823/Screenshot_2026-03-20_224603_ahlsla.png",CDN+"v1777714821/Screenshot_2026-03-20_224619_-_Copy_i0xowi.png",CDN+"v1777714820/Screenshot_2026-03-20_224627_krn9ik.png",CDN+"v1777714820/Screenshot_2026-03-20_224636_ct9gfi.png",CDN+"v1777714819/Screenshot_2026-03-20_224703_iafh3g.png",CDN+"v1777714819/Screenshot_2026-03-20_224655_rbudxp.png",CDN+"v1777714818/Screenshot_2026-03-20_224648_zss0gy.png",CDN+"v1777714817/Screenshot_2026-03-20_224642_udbcs7.png"],awards:"5× World Travel Award · One of the 100 Most Beautiful Hotels in the World · One of the World’s Leading Spa Resorts",brief:"Located on the German-Austrian border, just 20 minutes from Salzburg and surrounded by forest and exceptional mountain views.",concept:"This 150-room 5-star resort has an unmistakable character. A suspended copper fireplace anchors the sunken lounge, while the bar — finished in an Onyx-look material with precision backlighting — transforms from a calm daytime retreat to an atmospheric evening destination. True luxury is expressed through the generous use of space: premium woods, unpolished limestone, and natural granite throughout, with a 1,500m² spa that makes this not only Germany’s first mountain resort hotel, but its most celebrated.",materials:"Suspended copper fireplace · Onyx-look bar finishes · Premium woods · Unpolished limestone · Natural granite",moments:"The 1,500m² spa and the quality of spatial treatment across every area elevate this beyond a hotel — it is Germany’s benchmark for what a mountain resort can be."},
+      "kempinski-bad-saarow":{name:"Kempinski Hotel Bad Saarow",sector:"Hospitality",location:"Bad Saarow, Germany",img:CDN+"v1777714748/201901081195996438_imulhf.jpg",images:[CDN+"v1777714749/20190108608962667_eovgwe.jpg",CDN+"v1777714748/201901081195996438_imulhf.jpg",CDN+"v1777714748/20190108196199914_z34hqp.jpg",CDN+"v1777714747/201901081176349467_y2lzg7.jpg"],brief:"The very first Kempinski property in Europe. The design draws directly from the hotel’s lakeside setting, using organic materials to reflect the natural variations of the Bad Saarow landscape.",concept:"Contemporary detailing, symmetrical architecture, and gentle curves define functional zones throughout this 180-room 5-star property, while indirect lighting and a carefully considered colour palette extend the remarkable outdoors into every interior space.",materials:"Organic natural materials · Indirect lighting systems · Nature-inspired colour palette · Contemporary architectural detailing",moments:"The indirect lighting and colour choices are so closely calibrated to the landscape outside that moving between interior and exterior feels like a single continuous experience."},
+      "nevai":{name:"Nevai Hotel",sector:"Hospitality",location:"Verbier, Switzerland",img:CDN+"v1777715787/Screenshot_2026-03-27_222917_fakzbq.png",images:[CDN+"v1777714808/WhatsApp_Image_2026-03-27_at_10.33.13_PM_3_uhr4fp.jpg",CDN+"v1777714805/WhatsApp_Image_2026-03-27_at_10.34.21_PM_3_v3zwgx.jpg",CDN+"v1777714799/WhatsApp_Image_2026-03-27_at_10.34.55_PM_tzvqsx.jpg",CDN+"v1777714788/WhatsApp_Image_2026-03-27_at_10.33.13_PM_4_jov5zf.jpg",CDN+"v1777714793/WhatsApp_Image_2026-03-27_at_10.32.21_PM_3_a045wk.jpg",CDN+"v1777714791/WhatsApp_Image_2026-03-27_at_10.36.40_PM_3_bopf6q.jpg",CDN+"v1777714790/WhatsApp_Image_2026-03-27_at_10.35.48_PM_4_dtvk0q.jpg",CDN+"v1777714789/WhatsApp_Image_2026-03-27_at_10.34.56_PM_3_wohb1w.jpg",CDN+"v1777714789/WhatsApp_Image_2026-03-27_at_10.36.40_PM_1_xmzklq.jpg",CDN+"v1777714792/WhatsApp_Image_2026-03-27_at_10.36.40_PM_2_iybety.jpg",CDN+"v1777714792/WhatsApp_Image_2026-03-27_at_10.34.21_PM_1_bzhz32.jpg",CDN+"v1777714794/WhatsApp_Image_2026-03-27_at_10.33.12_PM_1_fydo7m.jpg",CDN+"v1777714794/WhatsApp_Image_2026-03-27_at_10.32.22_PM_2_gtezym.jpg",CDN+"v1777714794/WhatsApp_Image_2026-03-27_at_10.33.13_PM_1_j6etj5.jpg",CDN+"v1777714796/WhatsApp_Image_2026-03-27_at_10.33.37_PM_1_gcezvb.jpg",CDN+"v1777714796/WhatsApp_Image_2026-03-27_at_10.33.13_PM_2_bsfkik.jpg",CDN+"v1777714798/WhatsApp_Image_2026-03-27_at_10.34.56_PM_4_eja5yh.jpg",CDN+"v1777714797/WhatsApp_Image_2026-03-27_at_10.34.21_PM_aga4k8.jpg",CDN+"v1777714800/WhatsApp_Image_2026-03-27_at_10.33.12_PM_ni4zep.jpg",CDN+"v1777714803/WhatsApp_Image_2026-03-27_at_10.32.21_PM_1_fsiprq.jpg",CDN+"v1777714810/WhatsApp_Image_2026-03-27_at_10.35.48_PM_1_qv8wet.jpg"],awards:"Best Ski Hotel in Europe",brief:"Designed around smooth lines, curved forms, and calming colour tones, the Nevai brings the alpine environment inside without imitation.",concept:"The bar’s large gas fireplace establishes a warmth that anchors the French-inspired boudoir lounge. An engraved Corian reception desk and icicle motifs etched into glass panels throughout the lobby evoke ice, crystals, and snowflakes — channelling the mountain scenery beyond into every detail of the interior.",materials:"Engraved Corian · Etched glass panels · Gas fireplace · French boudoir upholstery · White-toned material palette",moments:"The engraved Corian reception desk — which reads instantly as ice, crystals, snowflakes — is the moment that tells the guest exactly where they are and what to expect from every space that follows."},
+      "radisson-berlin":{name:"Radisson SAS Hotel Berlin",sector:"Hospitality",location:"Berlin, Germany",img:CDN+"v1777714760/20190108423559967_fe8mbu.jpg",images:[CDN+"v1777714763/20190108610487137_stdopc.jpg",CDN+"v1777714758/201901081039288955_kbjfrg.jpg",CDN+"v1777714759/20190108172372908_qrsycn.jpg",CDN+"v1777714762/20190108714922594_xjqj01.jpg",CDN+"v1777714761/20190108719490822_teriaz.jpg",CDN+"v1777714761/201901081421331003_c8o0le.jpg",CDN+"v1777714760/201901081956097245_hpnioo.jpg",CDN+"v1777714758/201901081962722073_moonql.jpg"],brief:"Originally planned as a 4-star property and ultimately rated 5-star, the Radisson SAS Berlin Dom Aquárée is a contemporary hotel oriented toward the business traveller.",concept:"A 25-metre-high aquarium in the public area becomes the building’s defining feature — its live camera feeds transmitted to screens across the bar, while oversized water drops illuminate the lobby. Matte furniture with lacquered blue surfaces contrasts against dark wood, carrying the themes of water and earth throughout, while loft-format suites offer unobstructed views of the Museumsinsel and Berlin Cathedral.",materials:"Lacquered blue surfaces · Dark wood · Integrated aquarium feeds · Oversized water drop lighting · Loft-format suite design",moments:"The aquarium is not a decoration — it is the spatial and conceptual heart of the building, with every design decision in the public areas oriented around the experience of being near water."},
+      "radisson-copenhagen":{name:"Radisson SAS Hotel Copenhagen",sector:"Hospitality",location:"Copenhagen, Denmark",img:CDN+"v1777714756/201901081654523879_nvu4we.jpg",images:[CDN+"v1777714755/2019010848787061_om0h2t.jpg",CDN+"v1777714756/20190108190478522_poaw6o.jpg",CDN+"v1777714757/20190108724033118_hoyg2a.jpg",CDN+"v1777714754/20190108595754242_ow9jhr.jpg",CDN+"v1777714753/201901081807817922_vcy2du.jpg"],brief:"Designed to honour the architecture of Arne Jacobsen while delivering a contemporary 5-star experience with a distinctly Scandinavian character.",concept:"Jacobsen’s original 1950s engineering — including horizontal maple wood stripes that expand the visual scale of the guestrooms — was preserved and complemented with restrained, carefully balanced furniture. The kidney shapes of the era recur in the lighting, carpet patterns, and sandblasted cabinet mirrors, creating a seamless dialogue between the building’s heritage and its present expression.",materials:"Horizontal maple wood stripes · Kidney-shaped design elements · Sandblasted glass · Restrained Scandinavian furniture",moments:"The kidney shapes that appear in the lighting, carpets, and mirrors are the connective thread — they make every room feel like a conscious continuation of Jacobsen’s original thinking."},
+      "strandhotel":{name:"Strandhotel Atlantic",sector:"Hospitality",location:"Bansin, Baltic Sea, Germany",img:CDN+"v1777720555/7R103896_1_1_ao84xi.jpg",images:[CDN+"v1777720560/Atlantic_Rooms_C1_Session109143_1_kyg4fz.jpg",CDN+"v1777720554/Atlantic_Rooms_C1_Session102876_1_f5sdfx.jpg",CDN+"v1777720546/Atlantic_Rooms_C1_Session107524_1_hqu7t8.jpg",CDN+"v1777720549/Atlantic_Rooms_C1_Session106974_1_wsmjx8.jpg",CDN+"v1777720547/Atlantic_Rooms_C1_Session105390_1_ft79eu.jpg",CDN+"v1777720546/Atlantic_Rooms_C1_Session109368_2_1_xqq6e2.jpg",CDN+"v1777720543/Atlantic_Rooms_C1_Session103941_1_zzwmqu.jpg",CDN+"v1777720553/7R103850_1_gfm5gg.jpg",CDN+"v1777720542/Atlantic_Rooms_C1_Session106058_1_d2dk0s.jpg"],awards:"OPAL Award — Best Boutique Hotel Globally · Selected from 600+ International Entries",brief:"Located directly on the promenade of Bansin, the Strandhotel Atlantic opens up a world of tranquility, enjoyment, and inspiration. Here, the historical spirit of seaside resort culture meets modern ease, accompanied by endless views of the Baltic Sea.",concept:"Located directly on the promenade of Bansin, the Strandhotel Atlantic opens up a world of tranquility, enjoyment, and inspiration. Here, the historical spirit of seaside resort culture meets modern ease, accompanied by endless views of the Baltic Sea.",materials:"Coastal natural materials · Baltic-inspired palette · Contemporary boutique finishes · Bespoke lighting throughout",moments:"The promenade setting means the Baltic Sea is never more than a glance away — the design is calibrated to make that relationship feel constant and generous, from every room and every public space."},
+      "villa-meeresstrand":{name:"Villa Meeresstrand",sector:"Hospitality · Residences",location:"Usedom, Baltic Sea, Germany",img:CDN+"v1777719386/Atlantic_Rooms_C1_Session102876_1_otrsdr.jpg",images:[CDN+"v1777714769/WhatsApp_Image_2026-03-12_at_7.54.56_AM_1_aqkchj.jpg",CDN+"v1777714771/WhatsApp_Image_2026-03-29_at_7.35.56_PM_1_xmvaje.jpg",CDN+"v1777714771/WhatsApp_Image_2026-03-12_at_7.54.57_AM_2_hkwlq1.jpg",CDN+"v1777714775/WhatsApp_Image_2026-03-29_at_7.35.56_PM_5_pvlmny.jpg",CDN+"v1777714777/WhatsApp_Image_2026-03-29_at_7.35.56_PM_7_gf4ujk.jpg",CDN+"v1777714778/WhatsApp_Image_2026-03-29_at_7.35.56_PM_2_sonhea.jpg",CDN+"v1777714773/WhatsApp_Image_2026-03-12_at_7.54.57_AM_1_miqbz6.jpg"],brief:"Situated on Usedom — the resort island on Germany’s northern Baltic coast, nicknamed Berlin’s Bathtub for its historic connection to the capital — this project involved the complete redesign of a tired beach hotel for an owner with sixteen properties on the island.",concept:"The brief was to bridge the island’s distinguished history with a contemporary sensibility, honouring the setting’s quiet grandeur while creating a space that feels unmistakably of the present.",materials:"Baltic coastal materials · Contemporary finishes · Natural textile palette · Locally sourced elements",moments:"Usedom’s identity — its singing sand, its royal history, its role as Berlin’s escape — informed every material and spatial decision. The hotel had to feel like it belongs to this island, not simply placed upon it."},
+      "weston-hall":{name:"Weston Hall",sector:"Hospitality",location:"United Kingdom",img:CDN+"v1777714737/201901081709962828_rh3jj1.jpg",images:[CDN+"v1777714737/201901081034634776_kujfup.jpg",CDN+"v1777714737/201901081709962828_rh3jj1.jpg",CDN+"v1777714736/201901081238262567_bpblbh.jpg",CDN+"v1777714735/201901081781190449_yugz7v.jpg",CDN+"v1777714735/201901081426510441_qifzc7.jpg",CDN+"v1777714735/201901081644614978_cuhgw2.jpg"],awards:"4× World Travel Award · One of the 100 Most Beautiful Hotels in the World",brief:"This 5-star golf hotel and resort takes the organic curves of the golf course as its architectural language.",concept:"All interior and exterior passageways run underground, with curved ceilings and grass-covered atria set within open countryside — guests feel at one with the landscape at every moment. A giant oval skylight above reception echoes the shape of a golf green, flooding the lobby with natural light, while the spa draws exclusively on local materials including premium Welsh Slate to sustain the resort’s organic character throughout.",materials:"Welsh Slate · Grass-covered atria · Curved underground passageways · Oval skylight · Natural local materials",moments:"Walking underground between spaces, with grass-covered ceilings and open atria above, is the defining spatial experience — guests are always in the building and always on the course simultaneously."},
+      "sensotel":{name:"5+ Sensotel",sector:"Hospitality · Exhibition",location:"Saas-Fee, Switzerland",img:CDN+"v1777715246/Screenshot_2026-03-20_204939_dmezae.png",images:[CDN+"v1777715246/Screenshot_2026-03-20_204939_dmezae.png",CDN+"v1777715245/Screenshot_2026-03-20_204945_-_Copy_dtj2le.png",CDN+"v1777715244/Screenshot_2026-03-20_204956_-_Copy_ul6kw7.png",CDN+"v1777715243/Screenshot_2026-03-20_205014_-_Copy_uytu9x.png",CDN+"v1777715242/Screenshot_2026-03-20_205023_-_Copy_gqjehd.png",CDN+"v1777715240/Screenshot_2026-03-20_205031_nlwgkv.png"],brief:"A groundbreaking installation exploring the belief that a 5-star hotel room can respond and adapt to the unique senses and personality of each guest.",concept:"Before entering the suite, visitors are guided through five circular sense rooms — each dedicated to a single human sense: sound, touch, smell, sight, and taste. The suite itself uses laser-cut textile screens and translucent plastic elements, with a touch panel allowing guests to customise lighting, climate, and music for a genuinely personal sensory experience.",materials:"Laser-cut textile screens · Translucent plastic elements · Touch-panel control system · Multisensory scent and acoustic installations",moments:"The five sense rooms before entry are not a novelty — they are a recalibration. Guests arrive at their suite having already become aware of their own senses in a way that makes the room feel entirely different."},
+      "sleep-eat":{name:"Sleep + Eat UK",sector:"Hospitality · Exhibition",location:"London, United Kingdom",img:CDN+"v1777715254/Screenshot_2026-03-20_223012_efpyga.png",images:[CDN+"v1777715250/Screenshot_2026-03-20_223055_-_Copy_rwbh8m.png",CDN+"v1777715253/Screenshot_2026-03-20_223023_opl0ed.png",CDN+"v1777715254/Screenshot_2026-03-20_223012_efpyga.png",CDN+"v1777715252/Screenshot_2026-03-20_223046_-_Copy_nmrcir.png",CDN+"v1777715256/Screenshot_2026-03-20_222959_mwlsqo.png",CDN+"v1777715252/Screenshot_2026-03-20_223035_d7edzs.png"],brief:"Europe’s most prestigious hospitality design event, held annually at Olympia London.",concept:"The studio was selected to create one of the event’s celebrated Sleep Sets — concept guestrooms designed in collaboration with a non-hotel brand — an invitation extended to only a handful of the world’s most respected design practices. The studio’s participation placed its work in direct dialogue with the most influential voices in European hospitality design.",materials:"Bespoke installation materials · Collaborative brand elements · Experimental finishes and textiles",moments:"To be selected for a Sleep Set is to be placed among the defining design voices of the industry — a platform that has launched and confirmed careers in hospitality design for over fifteen years."},
+      "nikolskie":{name:"Nikolskie Ryady",sector:"Hospitality · Mixed Use · Retail · Office",location:"Moscow, Russia",img:CDN+"v1777714942/20190108533383617_dj8csd.jpg",images:[CDN+"v1777714942/20190108533383617_dj8csd.jpg",CDN+"v1777714941/201901081154882869_xxbjew.jpg"],brief:"A major mixed-use complex in Moscow combining hospitality, retail, office, and cultural programme.",concept:"The scale and complexity of Nikolskie Ryady demanded a design strategy that could produce coherence across multiple programmes while allowing each its own character. The studio developed a shared material language that unifies the complex without flattening it.",materials:"Russian stone · Bronzed metal · Woven textile wall systems · Integrated lighting · Polished concrete",moments:"The central atrium is the masterpiece — a space that serves all the programmes simultaneously while belonging to none of them exclusively."},
+      "bodrum":{name:"Bodrum",sector:"Hospitality · Mixed Use",location:"Bodrum, Turkey",img:CDN+"v1777714939/20190201331801784_koo7nz.jpg",images:[CDN+"v1777714939/20190201331801784_koo7nz.jpg",CDN+"v1777714938/201902011194329382_e9fvlv.jpg"],brief:"A 5-star luxury resort planned across Turkey’s Aegean coastline, encompassing 77 designer villas, 450 premium apartments, an upscale spa, a marina, and the full infrastructure of a self-sustaining community.",concept:"The masterplan includes premium retail, restaurants, a town hall, theatre, business conference centre, and educational institutions — moving beyond conventional resort planning to create a destination designed for year-round international residency through art, architecture, and extraordinary natural scenery.",materials:"Aegean limestone · Hand-painted ceramic tiles · Linen and cotton textiles · Olive wood · Handblown glass",moments:"The ambition here is not a resort — it is a city. A place designed to be lived in, not visited, with all the richness and specificity that demands."},
+      "sobanski":{name:"Sobanski Club",sector:"Hospitality · Exhibition",location:"Poland",img:CDN+"v1777715498/201901081041915933_sjppbt.jpg",images:[CDN+"v1777715506/201901081514976983_shfklo.jpg",CDN+"v1777715504/20190108977864450_kgtgpq.jpg",CDN+"v1777715502/20190108877852627_wuzoks.jpg",CDN+"v1777715500/201901081101776964_u9rikb.jpg",CDN+"v1777715498/201901081041915933_sjppbt.jpg",CDN+"v1777715496/20190108403963933_gqh1gb.jpg"],brief:"A private members club and cultural venue in Poland.",concept:"The studio designed a space that serves both the intimacy of private membership and the openness of cultural programming — a rare combination that required careful spatial sequencing.",materials:"Polish amber · Dark-stained oak · Velvet upholstery · Handcrafted ceramic details",moments:"The threshold between public and private is the defining design moment — a compressed sequence that transforms the visitor’s sense of arrival."},
+      "my-kidsy":{name:"My Kidsy Playground",sector:"Hospitality",location:"Global",img:CDN+"v1777715563/20200303605225832_w1mbql.jpg",images:[CDN+"v1777715561/202003032051160711_wxcayv.jpg",CDN+"v1777715563/20200303605225832_w1mbql.jpg",CDN+"v1777715556/202003031184126146_v2cz3r.jpg",CDN+"v1777715558/202003031230116236_qqyspq.jpg",CDN+"v1777715559/202003031668564962_ozceoi.jpg",CDN+"v1777715554/202003032098216143_slsz03.jpg"],brief:"myKidsy Playground is an integrated hospitality concept designed to connect hotels with young parents and children at an emotional level.",concept:"Bringing together the expertise of an award-winning architect, a sound designer, a scent artist, and an educational content platform, the concept creates biophilic play environments that entertain children while developing meaningful skills. Modular and fully adaptable, it can be integrated into hotels, co-working spaces, and shopping centres — offering a complete package that builds family loyalty and solves the industry’s most persistent challenge: how to meaningfully occupy children while parents travel.",materials:"Non-toxic natural pigments · Soft-form recycled rubber · Certified organic textiles · Bio-based paints · Biophilic planting",moments:"The myKidsy platform — the online booking tool for children’s activities — and the physical playground concept were designed to work together, creating loyalty that extends from the digital world into the physical space of the hotel."},
+      "augeo":{name:"Augeo",sector:"Hospitality · Mixed Use",location:"Rimini, Italy",img:CDN+"v1777714949/Screenshot_2026-03-21_214441_oifbpa.png",images:[CDN+"v1777714954/Screenshot_2026-03-21_214455_w9osuw.png",CDN+"v1777714956/Screenshot_2026-03-21_214817_-_Copy_dw3udk.png",CDN+"v1777714959/Screenshot_2026-03-20_203159_smpdyu.png",CDN+"v1777714961/Screenshot_2026-03-20_203103_-_Copy_hvk0yo.png",CDN+"v1777714964/Screenshot_2026-03-20_202908_sb9nak.png",CDN+"v1777714961/Screenshot_2026-03-20_203114_q5xd27.png",CDN+"v1777714960/Screenshot_2026-03-20_203142_k3ry7p.png",CDN+"v1777714957/Screenshot_2026-03-20_203213_qdhkwp.png",CDN+"v1777714955/12345_av2mat.jpg",CDN+"v1777714950/Screenshot_2026-03-21_214805_v354rk.png",CDN+"v1777714952/Screenshot_2026-03-21_214844_pppow1.png"],brief:"Developed from an idea by Yasmine Mahmoudieh and realised through the transformation of Palazzo Spina — a noble 17th-century residence in the historic heart of Rimini, built on medieval and Roman foundations — Augeo is a one-of-a-kind cultural and wellness centre whose name, from the Latin, means to increase, to grow, to strengthen.",concept:"Uniting a contemporary art gallery, a wellness centre, a gym, and a superior suite for resident artists within a single rigorously restored historic shell, every new intervention is legible as contemporary while entering into genuine dialogue with the medieval arches, barrel vaults, and severe plasters of the original structure. A sinuous HI-MACS reception sculpture guides visitors from entrance to seating to bar without interruption, preserving the primacy of the art on display, while the studio’s primarily indirect lighting lifts walls from the floor plane and gives every room both depth and serenity.",materials:"HI-MACS (Alpine White) · Medieval stone and plaster · Indirect lighting systems · Contemporary Italian finishes · Dornbracht installation",moments:"The reception sculpture — which begins as entrance, becomes seating, transforms into bar — is the defining object of the space. It shows, rather than tells, what this project is about: continuity, fluidity, the past made present."},
+      "loft-london":{name:"Loft London",sector:"Residences",location:"London, United Kingdom",img:CDN+"v1777714907/20190108461271219_dk12i0.jpg",images:[CDN+"v1777714908/201901081564656228_fny6oh.jpg",CDN+"v1777714906/201901082139597631_hy4vpu.jpg",CDN+"v1777714868/201901081980258474_xtpcyr.jpg",CDN+"v1777714869/201901081255484614_kdbzlo.jpg",CDN+"v1777714905/20190108872674617_v7ef1v.jpg",CDN+"v1777714867/20190108604727110_d8jt3i.jpg"],brief:"A high-specification residential loft in central London.",concept:"The brief demanded a home that functions as both a private retreat and an entertaining space of distinction — a balance between the intimate and the impressive.",materials:"Exposed concrete · Reclaimed hardwood · Brushed steel · Natural stone · Bespoke joinery",moments:"The double-height living space is the emotional core of the home — a volume that makes the city feel both present and distant simultaneously."},
+      "barbu-vacarescu":{name:"Barbu Vacarescu",sector:"Mixed Use · Retail · Office",location:"Bucharest, Romania",img:CDN+"v1777714948/201901221697684810_e0n3qe.jpg",images:[CDN+"v1777714948/201901221697684810_e0n3qe.jpg",CDN+"v1777714947/201901222143453709_mhpevv.jpg"],brief:"A landmark mixed-use development on one of Bucharest’s principal boulevards, combining a luxury base with an office tower connected by vertical circulation.",concept:"The facade is designed to optimise natural thermal regulation and daylighting, ventilating the building organically to reduce energy consumption throughout the day. Evening illumination, green roofs, and native planting complete a building that is both visually striking and genuinely sustainable.",materials:"Romanian travertine · Patinated copper · Glass curtain wall · Green roof systems · Native planting",moments:"The facade’s thermal logic is not hidden — it is expressed. The building wears its environmental intelligence as architecture, making sustainability visible rather than incidental."},
+      "kunsthalle":{name:"Kunsthalle",sector:"Mixed Use",location:"Germany",img:CDN+"v1777714945/201901222018765478_auq6if.jpg",images:[CDN+"v1777714945/201901222018765478_auq6if.jpg",CDN+"v1777714945/201901221893978436_akilhq.jpg",CDN+"v1777714944/20190122460026041_k1tnwt.jpg",CDN+"v1777714943/20190122339393134_b7wb9k.jpg"],brief:"A cultural institution requiring a spatial intervention that serves both the art and its audience.",concept:"The studio worked within a complex brief — respecting the primacy of the work on display while creating a visitor experience of its own quality.",materials:"Poured concrete · White oak · Gallery lighting systems · Acoustic plaster",moments:"The transition between gallery spaces is as considered as the spaces themselves — every threshold is a moment of preparation."},
+      "millenium":{name:"Millenium Center",sector:"Mixed Use · Retail",location:"Budapest, Hungary",img:CDN+"v1777714937/201901081939741617_nf8iy2.jpg",images:[CDN+"v1777714937/201901081939741617_nf8iy2.jpg",CDN+"v1777714936/201901081186912928_sfi3it.jpg",CDN+"v1777714935/20190108683113219_kpgyye.jpg"],brief:"A multifunctional 8,000m² complex in the Váci Utca, in the heart of Budapest, designed to host concerts, product displays, festivals, and events.",concept:"The programme combines restaurants, offices, and entertainment where lighting is the primary design instrument. A child-care centre developed in partnership with Disney adds a distinctive draw, while the roof — restored from original drawings by Gustave Eiffel — provides a celebrated finishing gesture.",materials:"Integrated lighting systems · Heritage roof restoration · Disney-partnered children’s space · Mixed commercial finishes",moments:"The Eiffel roof is not a historical detail — it is the crowning moment of the design, connecting this contemporary mixed-use space to one of the most celebrated engineering minds in history."},
+      "chinese-pharmacy":{name:"Chinese Pharmacy",sector:"Retail",location:"Germany",img:CDN+"v1777715334/201901087959241_cbxlmc.jpg",images:[CDN+"v1777715334/201901087959241_cbxlmc.jpg",CDN+"v1777715332/201901081941050743_cpsdlv.jpg",CDN+"v1777715330/201901081688721125_ptfy1o.jpg",CDN+"v1777715328/20190108582439926_qqdx8a.jpg",CDN+"v1777715324/201901081480343599_lqdsv4.jpg"],brief:"Drawing on the visual identity of a traditional Chinese Herb Depot, the design centres on a curved bar that stands in deliberate contrast to a geometric floor-to-ceiling cabinet system housing over 300 drawers — evoking an authentic ancient Chinese apothecary.",concept:"Bamboo flooring, grass wallpaper, warm indirect lighting, and illuminated light cubes reinforce the depot’s signature colours, creating a space that is tranquil, specific, and immersive.",materials:"Bamboo flooring · Grass wallpaper · Indirect warm lighting · Illuminated light cubes · 300-drawer cabinet system",moments:"The 300 drawers are not storage — they are the architecture. Their repetition and geometry create an environment that communicates deep expertise before a single word is spoken."},
+      "moscow-ocean":{name:"Moscow Ocean Park",sector:"Mixed Use",location:"Moscow, Russia",img:CDN+"v1777715547/201901222036063964_t7b5zm.jpg",images:[CDN+"v1777715552/20190122787109220_btrzqp.jpg",CDN+"v1777715550/20190122106622716_pg3nmf.jpg",CDN+"v1777715549/20190122151110183_vzxdqo.jpg",CDN+"v1777715545/201901221937917015_hja2hu.jpg",CDN+"v1777715543/201901221134235343_gngspe.jpg",CDN+"v1777715541/20190122504059994_anwwmr.jpg",CDN+"v1777715520/20190122257720082_uacfqo.jpg"],brief:"One of the largest inner-city mixed-use developments in Russia, spanning 220,000m².",concept:"The complex brings together an oceanarium, retail, offices, theatres, a hotel, and a children’s science centre. The sheer scale is humanised through strategic cuts, setbacks, and patios that introduce light and urban texture, while references to Russian culture, art, and architecture — including forms reminiscent of an Orthodox Basilica — give the development a strong sense of place and civic identity.",materials:"Marine-grade concrete · Glass water features · Blue-toned stone · Biomorphic structural forms · Cultural art installations",moments:"In a building of 220,000m², the risk is anonymity. The cuts and patios that break the facade are not decorative — they are the design solution that makes the scale feel human."},
+      "aon":{name:"Aon",sector:"Office Spaces",location:"Germany",img:CDN+"v1777715430/201901081254136777_u16ygm.jpg",images:[CDN+"v1777715433/201901081265094455_vkl5ut.jpg",CDN+"v1777715425/201901081380882474_mt9dyx.jpg",CDN+"v1777715432/201901081952969087_qrzbhj.jpg",CDN+"v1777715427/201901081290592621_dy5btq.jpg",CDN+"v1777715430/201901081254136777_u16ygm.jpg",CDN+"v1777715429/2019010887962031_bu6go6.jpg"],brief:"The headquarters of Aon incorporates the company’s brand colours — red and blue — to create a coherent identity that connects employees and reinforces the organisation’s culture.",concept:"An oval reception desk and carefully considered indirect lighting manage the scale of the entrance without diminishing it, projecting professionalism and design intelligence from the moment of arrival.",materials:"Brand-integrated colour system · Oval reception desk · Indirect lighting · Contemporary corporate finishes",moments:"A headquarters is a promise made physical. The design ensures that promise — of professionalism, confidence, and intelligence — is communicated to every visitor within seconds of arrival."},
+      "office-garbe":{name:"Office Garbe",sector:"Office Spaces",location:"Germany",img:CDN+"v1777715442/20190108474458789_b45itu.jpg",images:[CDN+"v1777715425/201901081380882474_mt9dyx.jpg",CDN+"v1777715437/20190108759016306_jtpi35.jpg",CDN+"v1777715442/20190108474458789_b45itu.jpg",CDN+"v1777715443/201901082062081643_xp36wm.jpg",CDN+"v1777715440/201901081628837862_qwqdye.jpg",CDN+"v1777715438/201901081159234369_qmtfmz.jpg"],brief:"Stripped back to its supporting walls, the space was entirely reconceived — using every surface with intention.",concept:"The walls function as gallery-style display for the owner’s art collection, illuminated by natural light filtering through polycarbonate doors. The combination of contrasting lines, considered lighting, and ergonomic furniture produces an interior that is unusual without being inaccessible. More than sixteen years after completion, the design remains as relevant as the day it was finished.",materials:"Polycarbonate doors · Gallery-style wall systems · Ergonomic furniture · Contrasting line details",moments:"Sixteen years is the real measure of a design. That this interior continues to feel current — bold but not dated — is the proof that the decisions made were genuine, not fashionable."},
+      "aedes":{name:"Aedes",sector:"Exhibition",location:"Berlin, Germany",img:CDN+"v1777715208/20190108590697713_vwj26c.jpg",images:[CDN+"v1777715208/20190108590697713_vwj26c.jpg",CDN+"v1777715120/201901081981715929_cflqsw.jpg",CDN+"v1777715119/20190108243185450_epc4qx.jpg",CDN+"v1777715117/2019010879812308_k8ejnt.jpg",CDN+"v1777715117/20190108240570164_si7dcs.jpg"],brief:"An exhibition installation at Aedes Architecture Forum — Germany’s first private architecture gallery, founded in 1980, and one of the world’s most respected institutions for architectural thought.",concept:"Having hosted over 600 exhibitions and given early platforms to Rem Koolhaas, Frank Gehry, Zaha Hadid, and Herzog & de Meuron, to exhibit at Aedes is to enter a lineage of the most significant architectural voices of the late 20th and early 21st centuries. The studio’s installation presented its regenerative materials research and design methodology to an international audience of architects, curators, and cultural leaders.",materials:"Regenerative materials library · 3D-printed components · Research documentation · Installation structures",moments:"Aedes does not show finished objects — it presents thinking in process. The studio’s installation was designed with that mandate in mind: not a display of work, but an argument about the future of materials."},
+      "berlinale":{name:"Berlinale Oréal VIP Club",sector:"Exhibition",location:"Berlin, Germany",img:CDN+"v1777715228/20190108360668145_hlt8qo.jpg",images:[CDN+"v1777715233/201901082013198382_bk5yaw.jpg",CDN+"v1777715240/20190108404070145_ys5kt9.jpg",CDN+"v1777715220/201901081251564575_wumehv.jpg",CDN+"v1777715236/201901081958903439_p0bhqx.jpg",CDN+"v1777715225/20190108927673669_tzolaj.jpg",CDN+"v1777715234/201901081953314743_viwi1h.jpg"],brief:"An immersive VIP lounge for the Berlin International Film Festival, designed around the five natural elements.",concept:"Unconventional material combinations — classic timber flooring, gauze, glass, river-stone tiles, moonlights, red drapes, and copper-toned curtains — create a layered atmosphere that moves between intimacy and spectacle. Cat grass grew continuously throughout the event, symbolising the perpetual creativity of the film industry, while each design iteration produced a distinct sensory environment that maintained the club’s signature spirit.",materials:"Classic timber flooring · Gauze · Glass · River-stone tiles · Copper-toned curtains · Living cat grass installation",moments:"The cat grass that grew continuously throughout the event was not a prop — it was a statement. Creativity, like grass, does not stop. The design was built around that conviction."},
+      "carpe-diem":{name:"Carpe Diem",sector:"Exhibition",location:"Germany",img:CDN+"v1777715215/20190108259963808_ggzca5.jpg",images:[CDN+"v1777715215/20190108259963808_ggzca5.jpg",CDN+"v1777715212/201901081028638410_jvv8t7.jpg",CDN+"v1777715216/201901081334558367_fbsidd.jpg",CDN+"v1777715213/201901081657355804_kaxbwf.jpg",CDN+"v1777715211/20190108553957806_phqnax.jpg"],brief:"Designed for Red Bull’s Carpe Diem wellness drink brand — a touring 40–80m² installation built to travel across multiple events.",concept:"Every element was engineered for rapid assembly and take-down without sacrificing quality or atmosphere. An organic aesthetic informed by Asian influences, ambient lighting integrated into hardwood flooring, and lightweight fibreglass construction create a coherent brand world that makes a strong first impression wherever it lands.",materials:"Lightweight fibreglass construction · Hardwood flooring with integrated lighting · Asian-influenced organic forms · Portable luxury finishes",moments:"Designing for assembly and disassembly without losing quality is one of the hardest problems in spatial design. This installation solves it — and looks effortless doing so."},
+      "palace-concept":{name:"Palace Concept",sector:"Exhibition",location:"Germany",img:CDN+"v1777715209/20190108690710417_oslzby.jpg",images:[CDN+"v1777715210/20190108946732646_xr0fvc.jpg",CDN+"v1777715209/20190108690710417_oslzby.jpg"],brief:"The Palace Concept introduces nature into the hotel suite through the considered use of light and glass.",concept:"Rejecting conventional hotel furnishings in favour of organic forms, the suite guides guests from the lounge toward the bed through a sequence designed for progressive relaxation. The bespoke Falling Water fittings — designed exclusively for this project — bring the serene quality of moving water into a space intended for complete rest.",materials:"Bespoke Falling Water fittings · Light and glass · Organic sculptural forms · Natural material palette",moments:"The Falling Water fittings were made for this room and no other. That level of specificity — design that could not exist anywhere else — is what separates a concept from a product."},
+      "eco-surge":{name:"EcoSurge",sector:"Phygital",location:"Global",img:CDN+"v1777715015/WhatsApp_Image_2026-03-10_at_7.56.06_PM_1_fz7ufi.jpg",images:[CDN+"v1777715015/WhatsApp_Image_2026-03-10_at_7.56.06_PM_1_fz7ufi.jpg"],brief:"A phygital installation exploring the intersection of digital experience and regenerative material reality.",concept:"EcoSurge brings together the physical and the digital in a single designed environment — using augmented reality to reveal the invisible life of regenerative materials.",materials:"Ocean plastic structures · Mycelium components · AR-integrated surfaces · Bio-luminescent elements",moments:"The moment when the AR layer is activated reveals dimensions of the materials that are invisible to the naked eye — transforming the viewer’s understanding of what they are standing within."},
+      "cyber-dreams":{name:"Cyber Dreams",sector:"Phygital",location:"Global",img:CDN+"v1777714999/WhatsApp_Image_2026-04-19_at_5.27.07_PM_cgxywl.jpg",images:[CDN+"v1777714999/WhatsApp_Image_2026-04-19_at_5.27.07_PM_cgxywl.jpg"],brief:"A phygital artwork exploring digital identity and the future of spatial experience.",concept:"Cyber Dreams investigates what happens to our sense of space when the physical and the digital become indistinguishable — using the studio’s design intelligence to produce an environment that operates simultaneously in both registers.",materials:"3D-printed ocean plastic · Reactive digital surfaces · Biophilic integration · Spatial audio systems",moments:"The disorientation between the physical and the digital is intentional — the work is designed to make the viewer uncertain about which reality they are inhabiting."},
+      "flowniversum":{name:"Flowniversum",sector:"Phygital",location:"Global",img:CDN+"v1777715060/Screenshot_2026-03-13_182739_qbbvw6.png",images:[CDN+"v1777715060/Screenshot_2026-03-13_182739_qbbvw6.png"],brief:"The studio’s signature collection — 3D-printed design objects made from ocean plastic and regenerative materials.",concept:"Flowniversum embodies the studio’s conviction that the most beautiful design objects and the most responsible ones are identical. Each piece is made to order, from materials that earn their place in the world.",materials:"Ocean plastic (certified) · Mycelium composite · Recycled textile fibres · Bio-resin finishes",moments:"The tactile quality of ocean plastic — its grain, its warmth, its specificity — is the defining sensory experience of every Flowniversum piece."},
+      "horchler":{name:"Horchler AG Exhibition Stand",sector:"Phygital",location:"Germany",img:CDN+"v1777714997/20190108340860141_ip3cyt.jpg",images:[CDN+"v1777714997/20190108340860141_ip3cyt.jpg",CDN+"v1777714996/201901081221642650_ddei9f.jpg",CDN+"v1777714994/20190108127374384_qw37fu.jpg"],brief:"An exhibition stand for a leading materials manufacturer — communicating technical innovation through spatial design.",concept:"The studio developed a stand that demonstrates the creative possibilities of the client’s materials through the stand itself — every surface and structure made from the product being presented.",materials:"Client’s proprietary material systems · Integrated lighting · Precision-engineered components",moments:"The stand is a proof of concept — every visitor leaves having inhabited the argument the manufacturer wants to make."}
+    };
+    /* ── Gallery builder ── */
+    var GALLERY_MAX=6;
+
+    function buildGallery(images){
+      if(!images||!images.length)return'';
+      var total=images.length;
+      var shown=Math.min(total,GALLERY_MAX);
+      var html='<span class="proj-modal-gallery-label">Gallery</span><div class="proj-gallery-grid">';
+      for(var i=0;i<shown;i++){
+        var isLast=(i===GALLERY_MAX-1)&&(total>GALLERY_MAX);
+        var remaining=total-GALLERY_MAX;
+        html+='<div class="proj-gallery-thumb" data-index="'+i+'">';
+        html+='<img src="'+images[i]+'" alt="Gallery image '+(i+1)+'" loading="lazy">';
+        if(isLast){
+          html+='<div class="proj-gallery-more"><span>+'+remaining+' more</span></div>';
+        }
+        html+='</div>';
+      }
+      html+='</div>';
+      return html;
+    }
+
+    /* ── Modal open ── */
+    var modal=document.getElementById('projModal');
+    var modalInner=document.getElementById('modalInner');
+    /* Back button inside modal content — event delegation */
+    var savedScrollY=0;
+    var currentImages=[];
+
+    function openModal(id){
+      var d=modalData[id];
+      if(!d)return;
+      savedScrollY=window.scrollY;
+      currentImages=d.images||[d.img];
+
+      var awardsHtml='';
+      if(d.awards){
+        var aw=d.awards+' \u00b7 '+d.awards+' \u00b7 '+d.awards+' \u00b7 '+d.awards+' \u00b7 '+d.awards+' \u00b7 '+d.awards+' \u00b7 ';
+        awardsHtml='<div class="proj-modal-awards"><div class="marquee marquee--dark" style="border:none;"><div class="marquee-inner"><span class="marquee-item">'+aw+'</span></div></div></div>';
+      }
+
+      modalInner.innerHTML=
+        '<div class="proj-modal-hero"><img class="proj-modal-hero-img" src="'+d.img+'" alt="'+d.name+'">'+awardsHtml+'</div>'+
+        '<div class="proj-modal-columns">'+
+          '<div class="proj-modal-text-col">'+
+            '<span class="proj-modal-sector">'+d.sector+'</span>'+
+            '<h2 class="proj-modal-title">'+d.name+'</h2>'+
+            '<span class="proj-modal-location">'+d.location+'</span>'+
+            '<div class="proj-modal-section"><span class="proj-modal-section-label">Context &amp; Brief</span><p class="proj-modal-section-body">'+d.brief+'</p></div>'+
+            '<div class="proj-modal-section"><span class="proj-modal-section-label">Concept &amp; Method</span><p class="proj-modal-section-body">'+d.concept+'</p></div>'+
+            '<div class="proj-modal-section"><span class="proj-modal-section-label">Key Materials</span><p class="proj-modal-section-body">'+d.materials+'</p></div>'+
+            '<div class="proj-modal-section" style="border-bottom:none;"><span class="proj-modal-section-label">Experience Moments</span><p class="proj-modal-section-body">'+d.moments+'</p></div>'+
+            '<button class="proj-modal-back" id="modalBackBtn" aria-label="Back to all projects"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Projects</button>'+
+          '</div>'+
+          '<div class="proj-modal-gallery-col">'+buildGallery(currentImages)+'</div>'+
+        '</div>';
+
+      /* Wire gallery thumbnail clicks */
+      modalInner.querySelectorAll('.proj-gallery-thumb').forEach(function(thumb){
+        thumb.addEventListener('click',function(){
+          openLightbox(parseInt(thumb.dataset.index));
+        });
+      });
+
+      document.body.style.overflow='hidden';
+      modal.scrollTop=0;
+      requestAnimationFrame(function(){modal.classList.add('open');});
+    }
+
+    function closeModal(){
+      modal.classList.remove('open');
+      document.body.style.overflow='';
+      setTimeout(function(){
+        window.scrollTo(0,savedScrollY);
+        modalInner.innerHTML='';
+      },800);
+    }
+
+    document.querySelectorAll('.proj-card[data-modal]').forEach(function(card){
+      card.addEventListener('click',function(){
+        openModal(card.dataset.modal);
+      });
+    });
+
+    modalInner.addEventListener('click',function(e){
+      if(e.target.closest('#modalBackBtn')) closeModal();
+    });
+
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'){
+        if(lb.classList.contains('open')){ closeLightbox(); }
+        else if(modal.classList.contains('open')){ closeModal(); }
+      }
+      if(lb.classList.contains('open')){
+        if(e.key==='ArrowLeft') lbNavigate(-1);
+        if(e.key==='ArrowRight') lbNavigate(1);
+      }
+    });
+
+    /* ── Lightbox ── */
+    var lb=document.getElementById('projLightbox');
+    var lbImg=document.getElementById('lbImg');
+    var lbCounter=document.getElementById('lbCounter');
+    var lbClose=document.getElementById('lbClose');
+    var lbPrev=document.getElementById('lbPrev');
+    var lbNext=document.getElementById('lbNext');
+    var lbIndex=0;
+
+    function openLightbox(startIndex){
+      lbIndex=startIndex;
+      lbImg.src=currentImages[lbIndex];
+      lbImg.alt='Image '+(lbIndex+1)+' of '+currentImages.length;
+      lbCounter.textContent=(lbIndex+1)+' / '+currentImages.length;
+      lbPrev.style.display=currentImages.length>1?'flex':'none';
+      lbNext.style.display=currentImages.length>1?'flex':'none';
+      requestAnimationFrame(function(){lb.classList.add('open');});
+    }
+
+    function closeLightbox(){
+      lb.classList.remove('open');
+    }
+
+    function lbNavigate(dir){
+      lbIndex=(lbIndex+dir+currentImages.length)%currentImages.length;
+      lbImg.src=currentImages[lbIndex];
+      lbImg.alt='Image '+(lbIndex+1)+' of '+currentImages.length;
+      lbCounter.textContent=(lbIndex+1)+' / '+currentImages.length;
+    }
+
+    if(lbClose) lbClose.addEventListener('click',closeLightbox);
+    if(lbPrev) lbPrev.addEventListener('click',function(){lbNavigate(-1);});
+    if(lbNext) lbNext.addEventListener('click',function(){lbNavigate(1);});
+
+    /* Close lightbox on background click */
+    lb.addEventListener('click',function(e){
+      if(e.target===lb) closeLightbox();
+    });
+  })();
+  </script>
+
+
+  <!-- Cookie consent -->
+  <div class="cookie-banner cookie-hidden" id="cookieBanner" role="alertdialog" aria-label="Cookie consent">
+    <p class="cookie-text">This site uses cookies to improve your experience. By continuing to browse you agree to our use of cookies.</p>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-btn--decline" id="cookieDecline">Decline</button>
+      <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Accept</button>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var banner=document.getElementById('cookieBanner');
+    if(!banner)return;
+    var consent=localStorage.getItem('ym_cookie_consent');
+    if(!consent){
+      setTimeout(function(){ banner.classList.remove('cookie-hidden'); }, 1200);
+    }
+    document.getElementById('cookieAccept').addEventListener('click',function(){
+      localStorage.setItem('ym_cookie_consent','accepted');
+      banner.classList.add('cookie-hidden');
+    });
+    document.getElementById('cookieDecline').addEventListener('click',function(){
+      localStorage.setItem('ym_cookie_consent','declined');
+      banner.classList.add('cookie-hidden');
+    });
+  })();
+  </script>
+</body>
+</html>
